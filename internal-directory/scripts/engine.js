@@ -1,5 +1,5 @@
 'use strict';
-/*global save $ */
+/*global save $ trainer*/
 
 let loadSheet =
   `
@@ -34,3 +34,24 @@ let loadSheet =
 // Startup
 $('.character-sheet').append(loadSheet);
 
+
+// Initiate trainer
+let terminalCount = 0;
+
+setInterval(function () {
+  trainer.processRate();
+  trainer.trainStrength();
+  trainer.trainConstitution();
+  trainer.trainDexterity();
+  trainer.trainIntelligence();
+  trainer.trainWisdom();
+  trainer.trainCharisma();
+  trainer.processLevels();
+  $('.terminal').append('<p class="gc">Trained</p>');
+  terminalCount++;
+  if (terminalCount > 7) {
+    $('.gc').remove();
+    save.saveGame(save.localSave);
+    terminalCount = 0;
+  }
+}, 1000);

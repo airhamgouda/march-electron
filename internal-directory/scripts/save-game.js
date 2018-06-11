@@ -5,6 +5,9 @@ const fs = require('fs');
 
 // Save game block
 const save = (function () {
+
+
+
   let rawdata = fs.readFileSync('./internal-directory/scripts/save.json');
   let localSave = JSON.parse(rawdata);
 

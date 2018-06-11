@@ -1,0 +1,17 @@
+.terminal {
+    border: 2px solid black;
+    float: left;
+    margin: auto;    
+    padding: 20px;
+    height: 300px;
+    width: 50%;
+}
+
+.map {
+    border: 2px solid black;
+    float: right;
+    margin: auto;    
+    padding: 20px;
+    height: 300px;
+    width: 50%;
+}
