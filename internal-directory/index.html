@@ -9,15 +9,29 @@
 </head>
 
 <body>
+    <!-- Scripts -->
+    <script src="./scripts/characters.js"></script>
+    <script src="./scripts/save-game.js"></script>
+    <script src="./scripts/buttons.js"></script>
+    <script src="./scripts/engine.js"></script>
+
+
     <div class="w3-container w3-cell-middle">
 
         <h1 class="w3-container w3-cell-middle">.March</h1>
 
-        <div class="container is-loading">
-            test
+        <form>
+            <input id="first-name" type="text">
+            <input id="last-name" type="text">
+            <button type="button" onclick="newCharacterButton()">Create New Character</button>
+        </form>
+
+        <div class="character-sheet">
+            <script type="text/javascript">
+                document.write(save.localSave.name.First)
+            </script>
         </div>
     </div>
-    <!-- Scripts -->
 
 </body>
 
