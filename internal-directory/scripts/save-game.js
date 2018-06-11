@@ -10,11 +10,6 @@ const save = (function () {
 
 
   // Save function
-  function newGame(saveData) {
-    let data = JSON.stringify(saveData, null, 2);
-    fs.writeFileSync('./internal-directory/scripts/save.json', data);
-  }
-
   function saveGame(saveData) {
     let data = JSON.stringify(saveData, null, 2);
     fs.writeFileSync('./internal-directory/scripts/save.json', data);
@@ -23,7 +18,6 @@ const save = (function () {
 
   return {
     localSave,
-    newGame,
     saveGame,
 
   };

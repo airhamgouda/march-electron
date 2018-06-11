@@ -9,11 +9,13 @@
 </head>
 
 <body>
-    <!-- Scripts -->
+    <!-- Preoload -->
+    <script>window.$ = window.jQuery = require('jquery');</script>
     <script src="./scripts/characters.js"></script>
     <script src="./scripts/save-game.js"></script>
     <script src="./scripts/buttons.js"></script>
-    <script src="./scripts/engine.js"></script>
+    <script src="./scripts/trainer.js"></script>
+
 
 
     <div class="w3-container w3-cell-middle">
@@ -24,15 +26,26 @@
             <input id="first-name" type="text">
             <input id="last-name" type="text">
             <button type="button" onclick="newCharacterButton()">Create New Character</button>
+            <button type="button" onclick="saveCharacterButton()">Save</button>
         </form>
+        <div>--------------------------------------------------------------------------------------------------</div>
+        <h5>Train On/Off</h5>
+        <div class="trainer">
+            <button onclick="strengthButton()" class="strength">Strength</button>
+            <button class="constitution">Constitution</button>
+            <button class="dexterity">Dexterity</button>
+            <button class="intelligence">Intelligence</button>
+            <button class="wisdom">Wisdom</button>
+            <button class="charisma">Charisma</button>
+        </div>
 
         <div class="character-sheet">
-            <script type="text/javascript">
-                document.write(save.localSave.name.First)
-            </script>
         </div>
     </div>
 
+
+    <!-- Execute -->
+    <script src="./scripts/engine.js"></script>
 </body>
 
 </html>

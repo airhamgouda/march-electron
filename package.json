@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "bulma": "^0.7.1",
+    "jquery": "^3.3.1",
     "wget": "0.0.1"
   }
 }

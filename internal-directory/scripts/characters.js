@@ -2,8 +2,10 @@
 
 const characters = (function () {
   // Create random skills with a cap of all attributes passed through as first argument
-  function skillGenerator() {
-    const cap = 30;
+
+  function skillGenerator(low, high) {
+    const lowEnd = low;
+    const highEnd = high;
     const strength = Math.floor((Math.random() * 10) + 3);
     const constitution = Math.floor((Math.random() * 10) + 3);
     const dexterity = Math.floor((Math.random() * 10) + 3);
@@ -11,19 +13,21 @@ const characters = (function () {
     const wisdom = Math.floor((Math.random() * 10) + 3);
     const charisma = Math.floor((Math.random() * 10) + 3);
     const total = strength + constitution + dexterity + intelligence + wisdom + charisma;
+    const level = Math.floor(total / Math.PI);
     let result = {
       strength,
       constitution,
       dexterity,
       intelligence,
       wisdom,
-      charisma
+      charisma,
+      level
     };
 
-    if (total !== cap) {
-      skillGenerator();
-    } else {
+    if (total > lowEnd && total < highEnd) {
       return result;
+    } else {
+      skillGenerator(25, 35);
     }
   }
 
@@ -32,15 +36,17 @@ const characters = (function () {
   const createMainCharacter = function (firstName, lastName) {
 
 
-    let skills = (skillGenerator());
+    let skills = (skillGenerator(25, 35));
     while (skills === undefined) {
-      skills = skillGenerator();
+      skills = skillGenerator(25, 35);
     }
+
+
 
     return {
       name: {
-        First: firstName,
-        Last: lastName
+        first: firstName,
+        last: lastName
       },
       skills: skills,
       experience: {
@@ -50,7 +56,7 @@ const characters = (function () {
         intelligenceXp: 0,
         wisdomXp: 0,
         charismaXp: 0
-      }
+      },
     };
   };
 
