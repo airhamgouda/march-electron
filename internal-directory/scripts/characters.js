@@ -1,6 +1,12 @@
 'use strict';
+/*global config */
 
 const characters = (function () {
+  // Config Files
+  let lowMain = config.mainCharacterLevelBase;
+  let highMain = config.mainCharacterLevelCap;
+
+
   // Create random skills with a cap of all attributes passed through as first argument
 
   function skillGenerator(low, high) {
@@ -27,7 +33,7 @@ const characters = (function () {
     if (total > lowEnd && total < highEnd) {
       return result;
     } else {
-      skillGenerator(25, 35);
+      skillGenerator(low, high);
     }
   }
 
@@ -36,9 +42,9 @@ const characters = (function () {
   const createMainCharacter = function (firstName, lastName) {
 
 
-    let skills = (skillGenerator(25, 35));
+    let skills = (skillGenerator(lowMain, highMain));
     while (skills === undefined) {
-      skills = skillGenerator(25, 35);
+      skills = skillGenerator(lowMain, highMain);
     }
 
 
@@ -65,7 +71,5 @@ const characters = (function () {
   };
 })();
 
-// console.log(characters.createMainCharacter('Aram', 'Hammoudeh'));
-// console.log('---------------------------------------------------');
-// console.log('Finished running');
+
 

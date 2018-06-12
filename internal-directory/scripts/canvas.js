@@ -1,41 +1,31 @@
 'use strict';
+/*global config*/
 // Initialize 
-var ctx = null;
+let ctx = null;
 
 //Game Map
-var gameMap = [
-  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-  0, 1, 1, 1, 0, 1, 1, 1, 1, 0,
-  0, 1, 0, 0, 0, 1, 0, 0, 0, 0,
-  0, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-  0, 1, 0, 1, 0, 0, 0, 1, 1, 0,
-  0, 1, 0, 1, 0, 1, 0, 0, 1, 0,
-  0, 1, 1, 1, 1, 1, 1, 1, 1, 0,
-  0, 1, 0, 0, 0, 0, 0, 1, 0, 0,
-  0, 1, 1, 1, 0, 1, 1, 1, 1, 0,
-  0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-];
+let gameMap = config.maps.test;
 // Configs
-var tileW = 30, tileH = 15;
-var mapW = 10, mapH = 10;
-var currentSecond = 0, frameCount = 0, framesLastSecond = 0;
-var lastFrameTime = 0;
+let tileW = config.values.tileW, tileH = config.values.tileH;
+let mapW = config.values.mapW, mapH = config.values.mapH;
+let currentSecond = 0, frameCount = 0, framesLastSecond = 0;
+let lastFrameTime = 0;
 
 // Key set to false
-var keysDown = {
+let keysDown = {
   37: false,
   38: false,
   39: false,
   40: false
 };
 
-var player = new Character();
+let player = new Character();
 
 function Character() {
   this.tileFrom = [1, 1];
   this.tileTo = [1, 1];
   this.timeMoved = 0;
-  this.dimensions = [25, 10];
+  this.dimensions = [config.player.playerMainW, config.player.playerMainH];
   this.position = [45, 45];
   this.delayMove = 700;
 }
@@ -46,7 +36,7 @@ Character.prototype.placeAt = function (x, y) {
     ((tileH * y) + ((tileH - this.dimensions[1]) / 2))];
 };
 Character.prototype.processMovement = function (t) {
-  if (this.tileFrom[0] == this.tileTo[0] && this.tileFrom[1] == this.tileTo[1]) { return false; }
+  if (this.tileFrom[0] === this.tileTo[0] && this.tileFrom[1] === this.tileTo[1]) { return false; }
 
   if ((t - this.timeMoved) >= this.delayMove) {
     this.placeAt(this.tileTo[0], this.tileTo[1]);
@@ -55,12 +45,12 @@ Character.prototype.processMovement = function (t) {
     this.position[0] = (this.tileFrom[0] * tileW) + ((tileW - this.dimensions[0]) / 2);
     this.position[1] = (this.tileFrom[1] * tileH) + ((tileH - this.dimensions[1]) / 2);
 
-    if (this.tileTo[0] != this.tileFrom[0]) {
-      var diff = (tileW / this.delayMove) * (t - this.timeMoved);
+    if (this.tileTo[0] !== this.tileFrom[0]) {
+      let diff = (tileW / this.delayMove) * (t - this.timeMoved);
       this.position[0] += (this.tileTo[0] < this.tileFrom[0] ? 0 - diff : diff);
     }
-    if (this.tileTo[1] != this.tileFrom[1]) {
-      var diff = (tileH / this.delayMove) * (t - this.timeMoved);
+    if (this.tileTo[1] !== this.tileFrom[1]) {
+      let diff = (tileH / this.delayMove) * (t - this.timeMoved);
       this.position[1] += (this.tileTo[1] < this.tileFrom[1] ? 0 - diff : diff);
     }
 
@@ -89,13 +79,13 @@ window.onload = function () {
 };
 
 function drawGame() {
-  if (ctx == null) { return; }
+  if (ctx === null) { return; }
 
-  var currentFrameTime = Date.now();
-  var timeElapsed = currentFrameTime - lastFrameTime;
+  let currentFrameTime = Date.now();
+  let timeElapsed = currentFrameTime - lastFrameTime;
 
-  var sec = Math.floor(Date.now() / 1000);
-  if (sec != currentSecond) {
+  let sec = Math.floor(Date.now() / 1000);
+  if (sec !== currentSecond) {
     currentSecond = sec;
     framesLastSecond = frameCount;
     frameCount = 1;
@@ -103,34 +93,38 @@ function drawGame() {
   else { frameCount++; }
 
   if (!player.processMovement(currentFrameTime)) {
-    if (keysDown[38] && player.tileFrom[1] > 0 && gameMap[toIndex(player.tileFrom[0], player.tileFrom[1] - 1)] == 1) { player.tileTo[1] -= 1; }
-    else if (keysDown[40] && player.tileFrom[1] < (mapH - 1) && gameMap[toIndex(player.tileFrom[0], player.tileFrom[1] + 1)] == 1) { player.tileTo[1] += 1; }
-    else if (keysDown[37] && player.tileFrom[0] > 0 && gameMap[toIndex(player.tileFrom[0] - 1, player.tileFrom[1])] == 1) { player.tileTo[0] -= 1; }
-    else if (keysDown[39] && player.tileFrom[0] < (mapW - 1) && gameMap[toIndex(player.tileFrom[0] + 1, player.tileFrom[1])] == 1) { player.tileTo[0] += 1; }
+    if (keysDown[38] && player.tileFrom[1] > 0 && gameMap[toIndex(player.tileFrom[0], player.tileFrom[1] - 1)] === 1) { player.tileTo[1] -= 1; }
+    else if (keysDown[40] && player.tileFrom[1] < (mapH - 1) && gameMap[toIndex(player.tileFrom[0], player.tileFrom[1] + 1)] === 1) { player.tileTo[1] += 1; }
+    else if (keysDown[37] && player.tileFrom[0] > 0 && gameMap[toIndex(player.tileFrom[0] - 1, player.tileFrom[1])] === 1) { player.tileTo[0] -= 1; }
+    else if (keysDown[39] && player.tileFrom[0] < (mapW - 1) && gameMap[toIndex(player.tileFrom[0] + 1, player.tileFrom[1])] === 1) { player.tileTo[0] += 1; }
 
-    if (player.tileFrom[0] != player.tileTo[0] || player.tileFrom[1] != player.tileTo[1]) { player.timeMoved = currentFrameTime; }
+    if (player.tileFrom[0] !== player.tileTo[0] || player.tileFrom[1] !== player.tileTo[1]) { player.timeMoved = currentFrameTime; }
   }
 
-  for (var y = 0; y < mapH; ++y) {
-    for (var x = 0; x < mapW; ++x) {
+  for (let y = 0; y < mapH; ++y) {
+    for (let x = 0; x < mapW; ++x) {
       switch (gameMap[((y * mapW) + x)]) {
       case 0:
-        ctx.fillStyle = '#685b48';
+        ctx.fillStyle = config.colors.dirt;
         break;
       default:
-        ctx.fillStyle = '#5aa457';
+        ctx.fillStyle = config.colors.grass;
       }
 
       ctx.fillRect(x * tileW, y * tileH, tileW, tileH);
     }
   }
 
-  ctx.fillStyle = '#0000ff';
+  ctx.fillStyle = config.colors.playerMain;
   ctx.fillRect(player.position[0], player.position[1],
     player.dimensions[0], player.dimensions[1]);
 
-  ctx.fillStyle = '#ff0000';
-  ctx.fillText('FPS: ' + framesLastSecond, 10, 20);
+  if (config.Switch.fpsCounter === 1) {
+    ctx.fillStyle = '#ff0000';
+    ctx.fillText('FPS: ' + framesLastSecond, 10, 20);
+  }
+
+
 
   lastFrameTime = currentFrameTime;
   requestAnimationFrame(drawGame);
