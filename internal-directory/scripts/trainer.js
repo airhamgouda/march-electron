@@ -1,12 +1,23 @@
 'use strict';
 /*global save $ */
 const trainer = (function () {
-  let strengthRate = .03;
-  let constitutionRate = .03;
-  let dexterityRate = .03;
-  let intelligenceRate = .03;
-  let wisdomRate = .03;
-  let charismaRate = .03;
+  // Rates
+
+  function processRate() {
+    strengthRate = (save.localSave.skills.strength / 100) + (save.localSave.skills.intelligence / 100);
+    constitutionRate = (save.localSave.skills.constitution / 100) + (save.localSave.skills.intelligence / 100);
+    dexterityRate = (save.localSave.skills.dexterity / 100) + (save.localSave.skills.intelligence / 100);
+    intelligenceRate = (save.localSave.skills.intelligence / 150) + (save.localSave.skills.intelligence / 100);
+    wisdomRate = (save.localSave.skills.wisdom / 100) + (save.localSave.skills.intelligence / 100);
+    charismaRate = (save.localSave.skills.charisma / 100) + (save.localSave.skills.intelligence / 100);
+  }
+
+  let strengthRate = 0;
+  let constitutionRate = 0;
+  let dexterityRate = 0;
+  let intelligenceRate = 0;
+  let wisdomRate = 0;
+  let charismaRate = 0;
 
 
   // Training
@@ -77,16 +88,6 @@ const trainer = (function () {
     save.localSave.skills.level = Math.floor(total / Math.PI);
   }
 
-  // Process Rate
-
-  function processRate() {
-    strengthRate = (save.localSave.skills.strength / 100) + (save.localSave.skills.intelligence / 100);
-    constitutionRate = (save.localSave.skills.constitution / 100) + (save.localSave.skills.intelligence / 100);
-    dexterityRate = (save.localSave.skills.dexterity / 100) + (save.localSave.skills.intelligence / 100);
-    intelligenceRate = (save.localSave.skills.intelligence / 150) + (save.localSave.skills.intelligence / 100);
-    wisdomRate = (save.localSave.skills.wisdom / 100) + (save.localSave.skills.intelligence / 100);
-    charismaRate = (save.localSave.skills.charisma / 100) + (save.localSave.skills.intelligence / 100);
-  }
 
   return {
     processRate,

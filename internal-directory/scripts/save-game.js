@@ -1,5 +1,5 @@
 'use strict';
-/*global characters */
+/*global $ */
 // Meta Data
 const fs = require('fs');
 
@@ -19,9 +19,11 @@ const save = (function () {
   }
 
 
+
   return {
     localSave,
     saveGame,
+
 
   };
 

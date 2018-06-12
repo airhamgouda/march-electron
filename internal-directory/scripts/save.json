@@ -1,23 +1,23 @@
 {
   "name": {
-    "first": "aram",
-    "last": "hammoudeh"
+    "first": "Aram ",
+    "last": "Hammoudeh"
   },
   "skills": {
-    "strength": 13,
-    "constitution": 11,
-    "dexterity": 10,
-    "intelligence": 15,
-    "wisdom": 11,
-    "charisma": 10,
-    "level": 22
+    "strength": 7,
+    "constitution": 8,
+    "dexterity": 8,
+    "intelligence": 6,
+    "wisdom": 8,
+    "charisma": 7,
+    "level": 14
   },
   "experience": {
-    "strengthXp": 306.6199999990338,
-    "constitutionXp": 984.2999999996986,
-    "dexterityXp": 797.0400000002704,
-    "intelligenceXp": 846.3833333340694,
-    "wisdomXp": 984.2999999996986,
-    "charismaXp": 797.0400000002704
+    "strengthXp": 250.94999999996506,
+    "constitutionXp": 782.8799999999902,
+    "dexterityXp": 782.8799999999902,
+    "intelligenceXp": 84.08333333330536,
+    "wisdomXp": 113.14000000005667,
+    "charismaXp": 250.94999999996506
   }
 }

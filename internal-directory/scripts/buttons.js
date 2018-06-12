@@ -34,9 +34,10 @@ function newCharacterButton() {
   `;
   $('.character-data').remove();
   $('.character-sheet').append(newSheet);
+  save.saveGame(save.localSave);
 }
 
 function saveCharacterButton() {
-  save.saveGame(save.localSave);
+
 }
 
