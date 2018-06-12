@@ -1,5 +1,5 @@
 'use strict';
-/*global config */
+/*global canvas config */
 
 const avatar = (function () {
 
@@ -7,6 +7,9 @@ const avatar = (function () {
   let mainPlayer = new Character();
   let tileW = config.values.tileW, tileH = config.values.tileH;
   let mapW = config.values.mapW, mapH = config.values.mapH;
+
+
+
 
 
   // Creating character class
@@ -24,6 +27,24 @@ const avatar = (function () {
     // How long it will take for character to move
     this.delayMove = 200;
   }
+  // Shorthand methods to see if the character can move up, down, left, and right.
+
+  Character.prototype.canMoveUp = function () { return this.canMoveTo(this.tileFrom[0], this.tileFrom[1] - 1); };
+  Character.prototype.canMoveDown = function () { return this.canMoveTo(this.tileFrom[0], this.tileFrom[1] + 1); };
+  Character.prototype.canMoveLeft = function () { return this.canMoveTo(this.tileFrom[0] - 1, this.tileFrom[1]); };
+  Character.prototype.canMoveRight = function () { return this.canMoveTo(this.tileFrom[0] + 1, this.tileFrom[1]); };
+
+  Character.prototype.moveLeft = function (t) { this.tileTo[0] -= 1; this.timeMoved = t; };
+  Character.prototype.moveRight = function (t) { this.tileTo[0] += 1; this.timeMoved = t; };
+  Character.prototype.moveUp = function (t) { this.tileTo[1] -= 1; this.timeMoved = t; };
+  Character.prototype.moveDown = function (t) { this.tileTo[1] += 1; this.timeMoved = t; };
+  // Character can and can not move list
+  Character.prototype.canMoveTo = function (x, y) {
+    if (x < 0 || x >= mapW || y < 0 || y >= mapH) { return false; }
+    if (config.tileTypes[config.maps.test[canvas.toIndex(x, y)]].floor !== config.floorTypes.path) { return false; }
+    return true;
+
+  };
 
   // Immediately place character at destination tile
   Character.prototype.placeAt = function (x, y) {

@@ -101,13 +101,13 @@ const canvas = (function () {
 
     // Is avatar.mainPlayer processing movement?
     if (!avatar.mainPlayer.processMovement(currentFrameTime)) {
-      if (keysDown[38] && avatar.mainPlayer.tileFrom[1] > 0 && gameMap[toIndex(avatar.mainPlayer.tileFrom[0], avatar.mainPlayer.tileFrom[1] - 1)] === 1) { avatar.mainPlayer.tileTo[1] -= 1; }
-      else if (keysDown[40] && avatar.mainPlayer.tileFrom[1] < (mapH - 1) && gameMap[toIndex(avatar.mainPlayer.tileFrom[0], avatar.mainPlayer.tileFrom[1] + 1)] === 1) { avatar.mainPlayer.tileTo[1] += 1; }
-      else if (keysDown[37] && avatar.mainPlayer.tileFrom[0] > 0 && gameMap[toIndex(avatar.mainPlayer.tileFrom[0] - 1, avatar.mainPlayer.tileFrom[1])] === 1) { avatar.mainPlayer.tileTo[0] -= 1; }
-      else if (keysDown[39] && avatar.mainPlayer.tileFrom[0] < (mapW - 1) && gameMap[toIndex(avatar.mainPlayer.tileFrom[0] + 1, avatar.mainPlayer.tileFrom[1])] === 1) { avatar.mainPlayer.tileTo[0] += 1; }
-
-      if (avatar.mainPlayer.tileFrom[0] !== avatar.mainPlayer.tileTo[0] || avatar.mainPlayer.tileFrom[1] !== avatar.mainPlayer.tileTo[1]) { avatar.mainPlayer.timeMoved = currentFrameTime; }
+      if (keysDown[38] && avatar.mainPlayer.canMoveUp()) { avatar.mainPlayer.moveUp(currentFrameTime); }
+      else if (keysDown[40] && avatar.mainPlayer.canMoveDown()) { avatar.mainPlayer.moveDown(currentFrameTime); }
+      else if (keysDown[37] && avatar.mainPlayer.canMoveLeft()) { avatar.mainPlayer.moveLeft(currentFrameTime); }
+      else if (keysDown[39] && avatar.mainPlayer.canMoveRight()) { avatar.mainPlayer.moveRight(currentFrameTime); }
     }
+
+
 
     // For loop to draw game map
 
@@ -119,15 +119,8 @@ const canvas = (function () {
 
     for (let y = viewport.startTile[1]; y <= viewport.endTile[1]; ++y) {
       for (let x = viewport.startTile[0]; x <= viewport.endTile[0]; ++x) {
-        switch (gameMap[((y * mapW) + x)]) {
 
-        // Define numbers with colors
-        case 0:
-          ctx.fillStyle = config.colors.dirt;
-          break;
-        default:
-          ctx.fillStyle = config.colors.grass;
-        }
+        ctx.fillStyle = config.tileTypes[gameMap[toIndex(x, y)]].colour;
         // Fill tile with color
         ctx.fillRect(viewport.offset[0] + x * tileW, viewport.offset[1] + y * tileH, tileW, tileH);
       }
@@ -154,7 +147,7 @@ const canvas = (function () {
 
 
   return {
-
+    toIndex,
   };
 })();
 

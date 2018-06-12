@@ -5,19 +5,19 @@
   },
   "skills": {
     "strength": 13,
-    "constitution": 9,
-    "dexterity": 9,
-    "intelligence": 7,
-    "wisdom": 8,
+    "constitution": 10,
+    "dexterity": 10,
+    "intelligence": 8,
+    "wisdom": 9,
     "charisma": 11,
-    "level": 18
+    "level": 19
   },
   "experience": {
-    "strengthXp": 188.73000000006252,
-    "constitutionXp": 751.3499999999789,
-    "dexterityXp": 751.3499999999789,
-    "intelligenceXp": 520.1833333333958,
-    "wisdomXp": 401.22000000003453,
-    "charismaXp": 462.46999999994443
+    "strengthXp": 832.2900000000991,
+    "constitutionXp": 391.46999999996103,
+    "dexterityXp": 391.46999999996103,
+    "intelligenceXp": 212.88333333340566,
+    "wisdomXp": 93.36999999996696,
+    "charismaXp": 1043.26999999997
   }
 }
