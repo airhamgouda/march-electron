@@ -1,5 +1,5 @@
 'use strict';
-/*global avatar config */
+/*global $ avatar events config */
 
 // HOW TO FIND INDEX
 // index = ((y * mapW) + x)
@@ -105,7 +105,7 @@ const canvas = (function () {
     if (!tilesetLoaded) { requestAnimationFrame(drawGame); return; }
 
     let currentFrameTime = Date.now();
-    let timeElapsed = currentFrameTime - lastFrameTime;
+
     // Current second to track framerate
     let sec = Math.floor(Date.now() / 1000);
     if (sec !== currentSecond) {
@@ -159,18 +159,41 @@ const canvas = (function () {
     for (let e = 0; e < config.interactive.length; e++) {
       let posX = avatar.mainPlayer.tileFrom[0];
       let posY = avatar.mainPlayer.tileFrom[1];
-      let ind = (posY * 10) + posX;
-      console.log(ind);
-      let northTile = gameMap[ind - 12];
-      let southTile = gameMap[ind + 9];
+      let ind = (posY * mapW) + posX;
+      let northTile = gameMap[ind - mapW];
+      let southTile = gameMap[ind + mapW];
+      let eastTile = gameMap[ind + 1];
+      let westTile = gameMap[ind - 1];
       // console.log(northTile);
 
+      // North
       if (northTile === 4) {
-        // console.log('Look out! Water to the north!');
+        events.ifWaterNorth();
+      } else {
+        $('.north').remove();
       }
+
+      // South
       if (southTile === 4) {
-        // console.log('Look out! Water to the south!');
+        events.ifWaterSouth();
+      } else {
+        $('.south').remove();
       }
+
+      // East
+      if (eastTile === 4) {
+        events.ifWaterEast();
+      } else {
+        $('.east').remove();
+      }
+
+      // West
+      if (westTile === 4) {
+        events.ifWaterWest();
+      } else {
+        $('.west').remove();
+      }
+
     }
 
 

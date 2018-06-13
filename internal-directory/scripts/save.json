@@ -1,23 +1,23 @@
 {
   "name": {
-    "first": "Ara",
-    "last": "Ham"
+    "first": "Dev",
+    "last": "Test"
   },
   "skills": {
-    "strength": 16,
-    "constitution": 13,
-    "dexterity": 13,
-    "intelligence": 10,
-    "wisdom": 11,
-    "charisma": 14,
-    "level": 24
+    "strength": 3,
+    "constitution": 6,
+    "dexterity": 7,
+    "intelligence": 5,
+    "wisdom": 8,
+    "charisma": 4,
+    "level": 10
   },
   "experience": {
-    "strengthXp": 136.07000000029223,
-    "constitutionXp": 128.48000000005285,
-    "dexterityXp": 128.48000000005285,
-    "intelligenceXp": 768.0833333332467,
-    "wisdomXp": 1050.6500000000933,
-    "charismaXp": 712.5600000002339
+    "strengthXp": 2.0000000000000004,
+    "constitutionXp": 2.75,
+    "dexterityXp": 3.0000000000000018,
+    "intelligenceXp": 2.0833333333333326,
+    "wisdomXp": 3.2499999999999982,
+    "charismaXp": 2.2500000000000004
   }
 }

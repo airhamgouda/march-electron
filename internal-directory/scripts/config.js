@@ -18,7 +18,7 @@ const config = (function () {
   // Designate tiles as interactive
 
   const interactive = [
-    4
+    4, 80
   ];
 
   // Character Generation Settings
@@ -47,8 +47,8 @@ const config = (function () {
   };
   // .values
   const values = {
-    tileW: 30,
-    tileH: 15,
+    tileW: 30 * 2,
+    tileH: 15 * 2,
     mapW: 20,
     mapH: 20,
     tileset: './assets/tileset.png'
@@ -61,7 +61,7 @@ const config = (function () {
   const floorTypes = {
     solid: 0,
     path: 1,
-    water: 2
+    water: 2,
   };
 
   const tileTypes = {
@@ -69,7 +69,8 @@ const config = (function () {
     1: { colour: '#5aa457', floor: floorTypes.path, sprite: [{ x: 40, y: 0, w: 30, h: 15 }] },
     2: { colour: '#e8bd7a', floor: floorTypes.path, sprite: [{ x: 80, y: 0, w: 30, h: 15 }] },
     3: { colour: '#286625', floor: floorTypes.solid, sprite: [{ x: 120, y: 0, w: 30, h: 15 }] },
-    4: { colour: '#678fd9', floor: floorTypes.water, sprite: [{ x: 160, y: 0, w: 30, h: 15 }] }
+    4: { colour: '#678fd9', floor: floorTypes.water, sprite: [{ x: 160, y: 0, w: 30, h: 15 }] },
+    80: { colour: '#f4426b', floor: floorTypes.solid, sprite: [{ x: 160, y: 0, w: 30, h: 15 }] }
   };
 
   // .maps
@@ -78,7 +79,7 @@ const config = (function () {
       0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 2, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 2, 2, 0,
       0, 2, 3, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 2, 2, 0,
-      0, 2, 3, 1, 4, 4, 1, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 0,
+      0, 2, 3, 1, 4, 4, 80, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 0,
       0, 2, 3, 1, 1, 4, 4, 1, 2, 3, 3, 2, 1, 1, 2, 1, 0, 0, 0, 0,
       0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 2, 2, 2, 2, 1, 1, 1, 1, 0,
       0, 1, 1, 1, 1, 2, 4, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 0,

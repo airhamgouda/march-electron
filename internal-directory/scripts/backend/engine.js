@@ -94,8 +94,11 @@ setInterval(function () {
     $('.gc').remove();
     terminalCount = 0;
   }
-}, 1000);
+}, 5000);
 
 // Render map
+// Handled in canvas.js
+
+
 
 

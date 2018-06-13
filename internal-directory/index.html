@@ -21,13 +21,19 @@
 
 
 
+
     <div class="w3-container w3-cell-middle">
 
         <h1 class="w3-container w3-cell-middle">.March</h1>
 
         <div class="terminal"></div>
 
-        <div class="hud"></div>
+        <div class="hud">
+            <div class="north-hud"></div>
+            <div class="south-hud"></div>
+            <div class="east-hud"></div>
+            <div class="west-hud"></div>
+        </div>
 
 
         <canvas id="canvas" class="map"></canvas>
@@ -47,6 +53,7 @@
 
 
     <!-- Execute -->
+    <script src="./scripts/backend/events.js"></script>
     <script src="./scripts/overworld/canvas.js"></script>
     <script src="./scripts/overworld/avatar.js"></script>
     <script src="./scripts/backend/engine.js"></script>
