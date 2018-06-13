@@ -26,6 +26,15 @@ const avatar = (function () {
     this.position = [30, 30];
     // How long it will take for character to move
     this.delayMove = 200;
+
+    //Sprite Direction
+    this.direction = config.directions.up;
+
+    this.sprites = {};
+    this.sprites[config.directions.up] = [{ x: 0, y: 120, w: 30, h: 30 }];
+    this.sprites[config.directions.right] = [{ x: 0, y: 150, w: 30, h: 30 }];
+    this.sprites[config.directions.down] = [{ x: 0, y: 180, w: 30, h: 30 }];
+    this.sprites[config.directions.left] = [{ x: 0, y: 210, w: 30, h: 30 }];
   }
   // Shorthand methods to see if the character can move up, down, left, and right.
 
@@ -34,10 +43,10 @@ const avatar = (function () {
   Character.prototype.canMoveLeft = function () { return this.canMoveTo(this.tileFrom[0] - 1, this.tileFrom[1]); };
   Character.prototype.canMoveRight = function () { return this.canMoveTo(this.tileFrom[0] + 1, this.tileFrom[1]); };
 
-  Character.prototype.moveLeft = function (t) { this.tileTo[0] -= 1; this.timeMoved = t; };
-  Character.prototype.moveRight = function (t) { this.tileTo[0] += 1; this.timeMoved = t; };
-  Character.prototype.moveUp = function (t) { this.tileTo[1] -= 1; this.timeMoved = t; };
-  Character.prototype.moveDown = function (t) { this.tileTo[1] += 1; this.timeMoved = t; };
+  Character.prototype.moveLeft = function (t) { this.tileTo[0] -= 1; this.timeMoved = t; this.direction = config.directions.left; };
+  Character.prototype.moveRight = function (t) { this.tileTo[0] += 1; this.timeMoved = t; this.direction = config.directions.right; };
+  Character.prototype.moveUp = function (t) { this.tileTo[1] -= 1; this.timeMoved = t; this.direction = config.directions.up; };
+  Character.prototype.moveDown = function (t) { this.tileTo[1] += 1; this.timeMoved = t; this.direction = config.directions.down; };
   // Character can and can not move list
   Character.prototype.canMoveTo = function (x, y) {
     if (x < 0 || x >= mapW || y < 0 || y >= mapH) { return false; }

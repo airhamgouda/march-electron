@@ -15,7 +15,11 @@ const config = (function () {
     fpsCounter: 1,
     mapSwitch: 1,
   };
+  // Designate tiles as interactive
 
+  const interactive = [
+    4
+  ];
 
   // Character Generation Settings
   const mainCharacterLevelBase = 25;
@@ -34,12 +38,20 @@ const config = (function () {
     grass: '#5aa457'
 
   };
+  // .directions
+  const directions = {
+    up: 0,
+    right: 1,
+    down: 2,
+    left: 3
+  };
   // .values
   const values = {
     tileW: 30,
     tileH: 15,
     mapW: 20,
     mapH: 20,
+    tileset: './assets/tileset.png'
 
 
   };
@@ -53,12 +65,13 @@ const config = (function () {
   };
 
   const tileTypes = {
-    0: { colour: '#685b48', floor: floorTypes.solid },
-    1: { colour: '#5aa457', floor: floorTypes.path },
-    2: { colour: '#e8bd7a', floor: floorTypes.path },
-    3: { colour: '#286625', floor: floorTypes.solid },
-    4: { colour: '#678fd9', floor: floorTypes.water }
+    0: { colour: '#685b48', floor: floorTypes.solid, sprite: [{ x: 0, y: 0, w: 30, h: 15 }] },
+    1: { colour: '#5aa457', floor: floorTypes.path, sprite: [{ x: 40, y: 0, w: 30, h: 15 }] },
+    2: { colour: '#e8bd7a', floor: floorTypes.path, sprite: [{ x: 80, y: 0, w: 30, h: 15 }] },
+    3: { colour: '#286625', floor: floorTypes.solid, sprite: [{ x: 120, y: 0, w: 30, h: 15 }] },
+    4: { colour: '#678fd9', floor: floorTypes.water, sprite: [{ x: 160, y: 0, w: 30, h: 15 }] }
   };
+
   // .maps
   const maps = {
     test: [
@@ -143,7 +156,9 @@ const config = (function () {
     colors,
     player,
     floorTypes,
-    tileTypes
+    tileTypes,
+    directions,
+    interactive
   };
 })();
 

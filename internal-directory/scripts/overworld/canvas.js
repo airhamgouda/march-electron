@@ -20,6 +20,8 @@ const canvas = (function () {
   // Configs
   let tileW = config.values.tileW, tileH = config.values.tileH;
   let mapW = config.values.mapW, mapH = config.values.mapH;
+
+  let tileset = null, tilesetURL = config.values.tileset, tilesetLoaded = false;
   // Framerate Tracking
   let currentSecond = 0, frameCount = 0, framesLastSecond = 0;
   let lastFrameTime = 0;
@@ -79,6 +81,18 @@ const canvas = (function () {
 
     viewport.screen = [document.getElementById('canvas').width,
       document.getElementById('canvas').height];
+
+
+    tileset = new Image();
+
+    tileset.onerror = function () {
+      ctx = null;
+      alert('Failed loading tileset');
+    };
+
+    tileset.onload = function () { tilesetLoaded = true; };
+
+    tileset.src = tilesetURL;
   };
 
 
@@ -88,6 +102,7 @@ const canvas = (function () {
     if (ctx === null) {
       return;
     }
+    if (!tilesetLoaded) { requestAnimationFrame(drawGame); return; }
 
     let currentFrameTime = Date.now();
     let timeElapsed = currentFrameTime - lastFrameTime;
@@ -119,16 +134,19 @@ const canvas = (function () {
 
     for (let y = viewport.startTile[1]; y <= viewport.endTile[1]; ++y) {
       for (let x = viewport.startTile[0]; x <= viewport.endTile[0]; ++x) {
-
-        ctx.fillStyle = config.tileTypes[gameMap[toIndex(x, y)]].colour;
-        // Fill tile with color
-        ctx.fillRect(viewport.offset[0] + x * tileW, viewport.offset[1] + y * tileH, tileW, tileH);
+        let tile = config.tileTypes[gameMap[toIndex(x, y)]];
+        ctx.drawImage(tileset,
+          tile.sprite[0].x, tile.sprite[0].y, tile.sprite[0].w, tile.sprite[0].h,
+          viewport.offset[0] + (x * tileW), viewport.offset[1] + (y * tileH),
+          tileW, tileH);
       }
     }
     // Draw main character
+    var sprite = avatar.mainPlayer.sprites[avatar.mainPlayer.direction];
 
-    ctx.fillStyle = config.colors.playerMain;
-    ctx.fillRect(viewport.offset[0] + avatar.mainPlayer.position[0], viewport.offset[1] + avatar.mainPlayer.position[1],
+    ctx.drawImage(tileset,
+      sprite[0].x, sprite[0].y, sprite[0].w, sprite[0].h,
+      viewport.offset[0] + avatar.mainPlayer.position[0], viewport.offset[1] + avatar.mainPlayer.position[1],
       avatar.mainPlayer.dimensions[0], avatar.mainPlayer.dimensions[1]);
 
     // Drawing Framerate
@@ -136,6 +154,25 @@ const canvas = (function () {
       ctx.fillStyle = '#ff0000';
       ctx.fillText('FPS: ' + framesLastSecond, 10, 20);
     }
+
+    // Events
+    for (let e = 0; e < config.interactive.length; e++) {
+      let posX = avatar.mainPlayer.tileFrom[0];
+      let posY = avatar.mainPlayer.tileFrom[1];
+      let ind = (posY * 10) + posX;
+      console.log(ind);
+      let northTile = gameMap[ind - 12];
+      let southTile = gameMap[ind + 9];
+      // console.log(northTile);
+
+      if (northTile === 4) {
+        // console.log('Look out! Water to the north!');
+      }
+      if (southTile === 4) {
+        // console.log('Look out! Water to the south!');
+      }
+    }
+
 
     // Draw new frame to canvas
     lastFrameTime = currentFrameTime;
@@ -148,6 +185,7 @@ const canvas = (function () {
 
   return {
     toIndex,
+    gameMap
   };
 })();
 

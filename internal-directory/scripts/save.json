@@ -4,20 +4,20 @@
     "last": "Ham"
   },
   "skills": {
-    "strength": 13,
-    "constitution": 10,
-    "dexterity": 10,
-    "intelligence": 8,
-    "wisdom": 9,
-    "charisma": 11,
-    "level": 19
+    "strength": 16,
+    "constitution": 13,
+    "dexterity": 13,
+    "intelligence": 10,
+    "wisdom": 11,
+    "charisma": 14,
+    "level": 24
   },
   "experience": {
-    "strengthXp": 832.2900000000991,
-    "constitutionXp": 391.46999999996103,
-    "dexterityXp": 391.46999999996103,
-    "intelligenceXp": 212.88333333340566,
-    "wisdomXp": 93.36999999996696,
-    "charismaXp": 1043.26999999997
+    "strengthXp": 136.07000000029223,
+    "constitutionXp": 128.48000000005285,
+    "dexterityXp": 128.48000000005285,
+    "intelligenceXp": 768.0833333332467,
+    "wisdomXp": 1050.6500000000933,
+    "charismaXp": 712.5600000002339
   }
 }
