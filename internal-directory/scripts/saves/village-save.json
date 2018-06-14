@@ -1,25 +1,25 @@
 {
   "0": {
     "name": {
-      "first": "Brian",
-      "last": "Gilbert"
+      "first": "Louise",
+      "last": "Huet"
     },
     "skills": {
-      "strength": 4,
+      "strength": 6,
       "constitution": 3,
-      "dexterity": 3,
-      "intelligence": 3,
-      "wisdom": 7,
-      "charisma": 6,
-      "level": 8
+      "dexterity": 6,
+      "intelligence": 5,
+      "wisdom": 6,
+      "charisma": 3,
+      "level": 9
     },
     "experience": {
-      "strengthXp": 196.28000000000014,
-      "constitutionXp": 168.2400000000056,
-      "dexterityXp": 168.2400000000056,
-      "intelligenceXp": 168.2400000000056,
-      "wisdomXp": 280.39999999998145,
-      "charismaXp": 252.36000000000828
+      "strengthXp": 95.58999999999966,
+      "constitutionXp": 69.51999999999957,
+      "dexterityXp": 95.58999999999966,
+      "intelligenceXp": 86.8999999999972,
+      "wisdomXp": 95.58999999999966,
+      "charismaXp": 69.51999999999957
     }
   }
 }

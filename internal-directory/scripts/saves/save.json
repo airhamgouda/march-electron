@@ -1,23 +1,23 @@
 {
   "name": {
-    "first": "Beulah",
-    "last": "Morini"
+    "first": "Marcus",
+    "last": "Lastrucci"
   },
   "skills": {
-    "strength": 9,
-    "constitution": 3,
+    "strength": 4,
+    "constitution": 7,
     "dexterity": 5,
-    "intelligence": 4,
-    "wisdom": 3,
-    "charisma": 3,
+    "intelligence": 3,
+    "wisdom": 4,
+    "charisma": 4,
     "level": 8
   },
   "experience": {
-    "strengthXp": 364.64999999999003,
-    "constitutionXp": 196.34999999998735,
-    "dexterityXp": 252.4500000000083,
-    "intelligenceXp": 186.99999999999451,
-    "wisdomXp": 196.34999999998735,
-    "charismaXp": 196.34999999998735
+    "strengthXp": 68.8800000000096,
+    "constitutionXp": 598.4000000000675,
+    "dexterityXp": 478.7199999999733,
+    "intelligenceXp": 299.20000000003375,
+    "wisdomXp": 68.8800000000096,
+    "charismaXp": 68.8800000000096
   }
 }

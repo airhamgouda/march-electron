@@ -66,6 +66,7 @@ const canvas = (function () {
   // Load on start
   function startCanvas() {
     let gameMap = config.load;
+
     ctx = document.getElementById('canvas').getContext('2d');
     requestAnimationFrame(drawGame);
     ctx.font = 'bold 10pt sans-serif';

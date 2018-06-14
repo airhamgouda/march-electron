@@ -1,5 +1,5 @@
 'use strict';
-/*global save $ village trainer canvas renderMap*/
+/*global save $ village events trainer canvas renderMap*/
 
 let loadSheet =
   `
@@ -35,6 +35,7 @@ let loadSheet =
 
 // Startup
 $('.character-sheet').append(loadSheet);
+
 
 // Update UI
 
@@ -78,23 +79,31 @@ function updateUI() {
 let terminalCount = 0;
 
 setInterval(function () {
-  village.solveCap();
-  trainer.processRate();
-  trainer.trainStrength();
-  trainer.trainConstitution();
-  trainer.trainDexterity();
-  trainer.trainIntelligence();
-  trainer.trainWisdom();
-  trainer.trainCharisma();
-  trainer.processLevels();
-  updateUI();
-  save.saveGame(save.localSave, save.localVillageSave);
 
-  $('.terminal').append('<p class="gc">Trained</p>');
-  terminalCount++;
-  if (terminalCount > 7) {
-    $('.gc').remove();
-    terminalCount = 0;
+  try {
+
+    village.generateVillagers(village.cap - village.villagerCount);
+    trainer.processRate();
+    trainer.trainStrength();
+    trainer.trainConstitution();
+    trainer.trainDexterity();
+    trainer.trainIntelligence();
+    trainer.trainWisdom();
+    trainer.trainCharisma();
+    trainer.processLevels();
+    updateUI();
+    save.saveGame(save.localSave, save.localVillageSave);
+    village.solveCap();
+    $('.terminal').append('<p class="gc">Trained</p>');
+    terminalCount++;
+    if (terminalCount > 7) {
+      $('.gc').remove();
+      terminalCount = 0;
+    }
+  }
+  catch (err) {
+    console.log('Error caught: ' + err.messsage);
+    village.generateVillagers(village.cap - village.villagerCount);
   }
 }, 1000);
 

@@ -3,6 +3,8 @@
 
 const events = (function () {
 
+
+
   // Water
 
   const water = {
@@ -40,8 +42,6 @@ const events = (function () {
     north: function () {
       $('.north').remove();
       $('.north-hud').append(`<button id="0" class="north">${save.localVillageSave[0].name.first}</button>`);
-
-
     },
 
     south: function () {
@@ -66,7 +66,8 @@ const events = (function () {
   return {
     water,
     npcDemo,
-    test
+    test,
+
 
   };
 })();
