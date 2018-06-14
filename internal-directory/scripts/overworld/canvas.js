@@ -171,6 +171,7 @@ const canvas = (function () {
         events.npcDemo.north();
       } else {
         $('.north').remove();
+        $('.north-hud').append('<button class="north">North</button>');
       }
 
       // South
@@ -180,6 +181,7 @@ const canvas = (function () {
         events.npcDemo.south();
       } else {
         $('.south').remove();
+        $('.south-hud').append('<button class="south">South</button>');
       }
 
       // East
@@ -189,6 +191,7 @@ const canvas = (function () {
         events.npcDemo.east();
       } else {
         $('.east').remove();
+        $('.east-hud').append('<button class="east">East</button>');
       }
 
       // West
@@ -198,6 +201,7 @@ const canvas = (function () {
         events.npcDemo.west();
       } else {
         $('.west').remove();
+        $('.west-hud').append('<button class="west">West</button>');
       }
 
     }

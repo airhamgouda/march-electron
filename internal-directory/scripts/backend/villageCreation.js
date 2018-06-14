@@ -9,13 +9,22 @@ const village = (function () {
   let lowMain = config.mainCharacterLevelBase;
   let highMain = config.mainCharacterLevelCap;
   let villagerCount = 0;
-  let cap = 0;
+  let cap = 1 + Math.floor(save.localSave.skills.charisma / 5);
   // Solve for villager cap. If cap changes, either grant new villagers or kills some off
   function solveCap() {
     let oldCap = this.cap;
     let newCap = 1 + Math.floor(save.localSave.skills.charisma / 5);
 
 
+    // How many villagers are currently alive
+    if (this.villagerCount < this.cap) {
+      this.villagerCount = 0;
+      for (var v = 0; v < this.cap; v++) {
+        if (save.localVillageSave[`${v}`] !== undefined) {
+          this.villagerCount++;
+        }
+      }
+    }
 
     if (oldCap < newCap) {
       // Your cap has gone up. A new villager will be added to the que to approach your village.
@@ -34,7 +43,7 @@ const village = (function () {
 
     if (oldCap > newCap) {
       this.cap = newCap;
-      
+
       // Your cap has gone down. A random villagerLeave event will play out, by either fighting the character, commiting suicide, etc
     }
 
@@ -55,8 +64,9 @@ const village = (function () {
       while (skills === undefined) {
         skills = characters.skillGenerator(lowMain, highMain);
       }
+      let id = i;
 
-      villagers[firstName] = {
+      villagers[id] = {
         name: {
           first: firstName,
           last: lastName
@@ -85,7 +95,8 @@ const village = (function () {
   return {
     generateVillagers,
     solveCap,
-    cap
+    cap,
+    villagerCount
   };
 })();
 

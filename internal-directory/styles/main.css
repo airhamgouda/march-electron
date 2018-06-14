@@ -10,7 +10,26 @@
 .north-hud, .west-hud, .south-hud, .east-hud {
     border: 2px solid rgb(0, 0, 0);
     height: 25%;
+    width: 100%;
     text-align: center;
+}
+
+.north, .south, .east, .west {
+     background-color: rgb(141, 29, 29); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+}
+
+button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
 }
 .hud {
   box-sizing: border-box;

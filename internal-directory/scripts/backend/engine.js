@@ -103,5 +103,8 @@ canvas.startCanvas();
 // Handled in canvas.js
 
 
+// Event delegation
+
+
 
 

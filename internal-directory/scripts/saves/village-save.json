@@ -1,25 +1,25 @@
 {
-  "Luke": {
+  "0": {
     "name": {
-      "first": "Luke",
-      "last": "Byrd"
+      "first": "Brian",
+      "last": "Gilbert"
     },
     "skills": {
-      "strength": 3,
-      "constitution": 7,
+      "strength": 4,
+      "constitution": 3,
       "dexterity": 3,
-      "intelligence": 6,
-      "wisdom": 4,
-      "charisma": 5,
+      "intelligence": 3,
+      "wisdom": 7,
+      "charisma": 6,
       "level": 8
     },
     "experience": {
-      "strengthXp": 0,
-      "constitutionXp": 0,
-      "dexterityXp": 0,
-      "intelligenceXp": 0,
-      "wisdomXp": 0,
-      "charismaXp": 0
+      "strengthXp": 196.28000000000014,
+      "constitutionXp": 168.2400000000056,
+      "dexterityXp": 168.2400000000056,
+      "intelligenceXp": 168.2400000000056,
+      "wisdomXp": 280.39999999998145,
+      "charismaXp": 252.36000000000828
     }
   }
 }
