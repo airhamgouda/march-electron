@@ -9,12 +9,9 @@ const canvas = (function () {
 
   // Meta
   let ctx = null;
-  let gameMap = config.maps.test;
+  let gameMap = config.load;
 
   // Waiting menu
-  if (gameMap === null) {
-    // ..
-  }
 
 
   // Configs
@@ -67,7 +64,8 @@ const canvas = (function () {
 
 
   // Load on start
-  window.onload = function () {
+  function startCanvas() {
+    let gameMap = config.load;
     ctx = document.getElementById('canvas').getContext('2d');
     requestAnimationFrame(drawGame);
     ctx.font = 'bold 10pt sans-serif';
@@ -93,7 +91,7 @@ const canvas = (function () {
     tileset.onload = function () { tilesetLoaded = true; };
 
     tileset.src = tilesetURL;
-  };
+  }
 
 
 
@@ -142,7 +140,7 @@ const canvas = (function () {
       }
     }
     // Draw main character
-    var sprite = avatar.mainPlayer.sprites[avatar.mainPlayer.direction];
+    let sprite = avatar.mainPlayer.sprites[avatar.mainPlayer.direction];
 
     ctx.drawImage(tileset,
       sprite[0].x, sprite[0].y, sprite[0].w, sprite[0].h,
@@ -168,28 +166,36 @@ const canvas = (function () {
 
       // North
       if (northTile === 4) {
-        events.ifWaterNorth();
+        events.water.north();
+      } else if (northTile === 60) {
+        events.npcDemo.north();
       } else {
         $('.north').remove();
       }
 
       // South
       if (southTile === 4) {
-        events.ifWaterSouth();
+        events.water.south();
+      } else if (southTile === 60) {
+        events.npcDemo.south();
       } else {
         $('.south').remove();
       }
 
       // East
       if (eastTile === 4) {
-        events.ifWaterEast();
+        events.water.east();
+      } else if (eastTile === 60) {
+        events.npcDemo.east();
       } else {
         $('.east').remove();
       }
 
       // West
       if (westTile === 4) {
-        events.ifWaterWest();
+        events.water.west();
+      } else if (westTile === 60) {
+        events.npcDemo.west();
       } else {
         $('.west').remove();
       }
@@ -208,7 +214,8 @@ const canvas = (function () {
 
   return {
     toIndex,
-    gameMap
+    gameMap,
+    startCanvas
   };
 })();
 

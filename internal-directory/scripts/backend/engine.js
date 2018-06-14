@@ -1,5 +1,5 @@
 'use strict';
-/*global save $ trainer renderMap*/
+/*global save $ trainer canvas renderMap*/
 
 let loadSheet =
   `
@@ -86,17 +86,19 @@ setInterval(function () {
   trainer.trainWisdom();
   trainer.trainCharisma();
   trainer.processLevels();
-  save.saveGame(save.localSave);
   updateUI();
+  save.saveGame(save.localSave, save.localVillageSave);
+
   $('.terminal').append('<p class="gc">Trained</p>');
   terminalCount++;
   if (terminalCount > 7) {
     $('.gc').remove();
     terminalCount = 0;
   }
-}, 5000);
+}, 1000);
 
 // Render map
+canvas.startCanvas();
 // Handled in canvas.js
 
 

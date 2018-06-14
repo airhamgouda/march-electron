@@ -10,14 +10,13 @@
 </head>
 
 <body>
-    <!-- Preoload -->
+    <!-- Preload -->
     <script>window.$ = window.jQuery = require('jquery');</script>
-    <script src="./scripts/backend/save-game.js"></script>
+    <script src="./scripts/saves/save-game.js"></script>
     <script src="./scripts/config.js"></script>
-
-    <script src="./scripts/ui/buttons.js"></script>
     <script src="./scripts/backend/trainer.js"></script>
     <script src="./scripts/backend/characters.js"></script>
+    <script src="./scripts/backend/villageCreation.js"></script>
 
 
 
@@ -35,15 +34,15 @@
             <div class="west-hud"></div>
         </div>
 
-
-        <canvas id="canvas" class="map"></canvas>
-
+        <div class="canvas-frame">
+            <canvas id="canvas" class="map"></canvas>
+        </div>
         <div>--------------------------------------------------------------------------------------------------</div>
         <form>
             <input id="first-name" type="text">
             <input id="last-name" type="text">
             <button type="button" onclick="newCharacterButton()">Create New Character</button>
-
+            <button title="Coming Soon!" type="button" onclick="loadNewMap()" disabled>Load New Map</button>
         </form>
         <div>----------------------------------------------------------------------</div>
 
@@ -56,6 +55,7 @@
     <script src="./scripts/backend/events.js"></script>
     <script src="./scripts/overworld/canvas.js"></script>
     <script src="./scripts/overworld/avatar.js"></script>
+    <script src="./scripts/ui/buttons.js"></script>
     <script src="./scripts/backend/engine.js"></script>
 </body>
 

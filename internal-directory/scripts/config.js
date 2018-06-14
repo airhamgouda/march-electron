@@ -18,12 +18,12 @@ const config = (function () {
   // Designate tiles as interactive
 
   const interactive = [
-    4, 80
+    4, 60
   ];
 
   // Character Generation Settings
-  const mainCharacterLevelBase = 25;
-  const mainCharacterLevelCap = 35;
+  const mainCharacterLevelBase = 20;
+  const mainCharacterLevelCap = 30;
 
   // Canvas
   // .player
@@ -31,13 +31,7 @@ const config = (function () {
     playerMainW: 25,
     playerMainH: 10,
   };
-  // .colors
-  const colors = {
-    playerMain: '#f44242',
-    dirt: '#685b48',
-    grass: '#5aa457'
 
-  };
   // .directions
   const directions = {
     up: 0,
@@ -50,7 +44,7 @@ const config = (function () {
     tileW: 30 * 2,
     tileH: 15 * 2,
     mapW: 20,
-    mapH: 20,
+    mapH: 5,
     tileset: './assets/tileset.png'
 
 
@@ -65,44 +59,52 @@ const config = (function () {
   };
 
   const tileTypes = {
-    0: { colour: '#685b48', floor: floorTypes.solid, sprite: [{ x: 0, y: 0, w: 30, h: 15 }] },
-    1: { colour: '#5aa457', floor: floorTypes.path, sprite: [{ x: 40, y: 0, w: 30, h: 15 }] },
-    2: { colour: '#e8bd7a', floor: floorTypes.path, sprite: [{ x: 80, y: 0, w: 30, h: 15 }] },
-    3: { colour: '#286625', floor: floorTypes.solid, sprite: [{ x: 120, y: 0, w: 30, h: 15 }] },
-    4: { colour: '#678fd9', floor: floorTypes.water, sprite: [{ x: 160, y: 0, w: 30, h: 15 }] },
-    80: { colour: '#f4426b', floor: floorTypes.solid, sprite: [{ x: 160, y: 0, w: 30, h: 15 }] }
+    // Floor Tiles
+    0: { colour: '#685b48', floor: floorTypes.solid, sprite: [{ x: 0, y: 0, w: 40, h: 40 }] },
+    1: { colour: '#5aa457', floor: floorTypes.path, sprite: [{ x: 40, y: 0, w: 40, h: 40 }] },
+    2: { colour: '#e8bd7a', floor: floorTypes.path, sprite: [{ x: 80, y: 0, w: 40, h: 40 }] },
+    3: { colour: '#286625', floor: floorTypes.solid, sprite: [{ x: 120, y: 0, w: 40, h: 40 }] },
+    4: { colour: '#678fd9', floor: floorTypes.water, sprite: [{ x: 160, y: 0, w: 40, h: 40 }] },
+
+    // People
+    // .grass
+    60: { colour: '#678fd9', floor: floorTypes.solid, sprite: [{ x: 40, y: 40, w: 40, h: 40 }] },
+
+    // House Tiles
+    // .bedroom
+    80: { colour: '#f4426b', floor: floorTypes.path, sprite: [{ x: 200, y: 0, w: 40, h: 40 }] }
   };
 
   // .maps
+
+
   const maps = {
+
     test: [
-      0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 2, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 2, 2, 0,
-      0, 2, 3, 4, 4, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 2, 2, 0,
-      0, 2, 3, 1, 4, 4, 80, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 0,
-      0, 2, 3, 1, 1, 4, 4, 1, 2, 3, 3, 2, 1, 1, 2, 1, 0, 0, 0, 0,
-      0, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 2, 2, 2, 2, 1, 1, 1, 1, 0,
-      0, 1, 1, 1, 1, 2, 4, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 0,
-      0, 1, 1, 1, 1, 2, 4, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 0,
-      0, 1, 1, 1, 1, 2, 4, 4, 4, 4, 4, 1, 1, 1, 2, 2, 2, 2, 1, 0,
-      0, 1, 1, 1, 1, 2, 3, 2, 1, 1, 4, 1, 1, 1, 1, 3, 3, 2, 1, 0,
-      0, 1, 2, 2, 2, 2, 1, 2, 1, 1, 4, 1, 1, 1, 1, 1, 3, 2, 1, 0,
-      0, 1, 2, 3, 3, 2, 1, 2, 1, 1, 4, 4, 4, 4, 4, 4, 4, 2, 4, 4,
-      0, 1, 2, 3, 3, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 0,
-      0, 1, 2, 3, 4, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 0, 1, 2, 1, 0,
-      0, 3, 2, 3, 4, 4, 1, 2, 2, 2, 2, 2, 2, 2, 1, 0, 1, 2, 1, 0,
-      0, 3, 2, 3, 4, 4, 3, 2, 1, 1, 1, 1, 1, 2, 1, 1, 1, 2, 3, 0,
-      0, 3, 2, 3, 4, 1, 3, 2, 1, 3, 1, 1, 1, 2, 1, 1, 1, 2, 3, 0,
-      0, 1, 2, 2, 2, 2, 2, 2, 3, 3, 3, 1, 1, 2, 2, 2, 2, 2, 3, 0,
-      0, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 1, 1, 1, 1, 1, 1, 4, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 2, 2, 2, 2, 2, 2, 60, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 0,
+      0, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 0,
+      0, 2, 4, 4, 4, 3, 2, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+
+    ],
+
+    test2: [
+      1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 2, 2, 4, 2, 2, 2, 60, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 0,
+      0, 2, 2, 4, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 0,
+      0, 2, 4, 4, 4, 3, 2, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     ]
+
   };
+
+  const load = maps.test;
 
 
   // HTML Templates
-  const characterInfoWithLabels =
-    `
+  const characterInfoWithLabels = function () {
+    return `
           <table class="character-data" style="width:100%">
           <tr>
             <th>Firstname</th>
@@ -128,6 +130,7 @@ const config = (function () {
           </tr>
         </table>
           `;
+  };
 
 
   const characterInfo =
@@ -154,7 +157,7 @@ const config = (function () {
     maps,
     values,
     Switch,
-    colors,
+    load,
     player,
     floorTypes,
     tileTypes,

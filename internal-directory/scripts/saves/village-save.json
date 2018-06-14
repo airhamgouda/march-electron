@@ -1,0 +1,117 @@
+{
+  "Cecilia": {
+    "name": {
+      "first": "Cecilia",
+      "last": "Santiago"
+    },
+    "skills": {
+      "strength": 3,
+      "constitution": 9,
+      "dexterity": 3,
+      "intelligence": 3,
+      "wisdom": 4,
+      "charisma": 4,
+      "level": 8
+    },
+    "experience": {
+      "strengthXp": 0,
+      "constitutionXp": 0,
+      "dexterityXp": 0,
+      "intelligenceXp": 0,
+      "wisdomXp": 0,
+      "charismaXp": 0
+    }
+  },
+  "Alex": {
+    "name": {
+      "first": "Alex",
+      "last": "Milani"
+    },
+    "skills": {
+      "strength": 5,
+      "constitution": 3,
+      "dexterity": 3,
+      "intelligence": 6,
+      "wisdom": 4,
+      "charisma": 4,
+      "level": 7
+    },
+    "experience": {
+      "strengthXp": 0,
+      "constitutionXp": 0,
+      "dexterityXp": 0,
+      "intelligenceXp": 0,
+      "wisdomXp": 0,
+      "charismaXp": 0
+    }
+  },
+  "Lillian": {
+    "name": {
+      "first": "Lillian",
+      "last": "Cianferoni"
+    },
+    "skills": {
+      "strength": 5,
+      "constitution": 3,
+      "dexterity": 7,
+      "intelligence": 4,
+      "wisdom": 4,
+      "charisma": 3,
+      "level": 8
+    },
+    "experience": {
+      "strengthXp": 0,
+      "constitutionXp": 0,
+      "dexterityXp": 0,
+      "intelligenceXp": 0,
+      "wisdomXp": 0,
+      "charismaXp": 0
+    }
+  },
+  "Emilie": {
+    "name": {
+      "first": "Emilie",
+      "last": "Dumont"
+    },
+    "skills": {
+      "strength": 3,
+      "constitution": 3,
+      "dexterity": 6,
+      "intelligence": 5,
+      "wisdom": 3,
+      "charisma": 5,
+      "level": 7
+    },
+    "experience": {
+      "strengthXp": 0,
+      "constitutionXp": 0,
+      "dexterityXp": 0,
+      "intelligenceXp": 0,
+      "wisdomXp": 0,
+      "charismaXp": 0
+    }
+  },
+  "Steven": {
+    "name": {
+      "first": "Steven",
+      "last": "Wyatt"
+    },
+    "skills": {
+      "strength": 8,
+      "constitution": 6,
+      "dexterity": 3,
+      "intelligence": 5,
+      "wisdom": 3,
+      "charisma": 4,
+      "level": 9
+    },
+    "experience": {
+      "strengthXp": 0,
+      "constitutionXp": 0,
+      "dexterityXp": 0,
+      "intelligenceXp": 0,
+      "wisdomXp": 0,
+      "charismaXp": 0
+    }
+  }
+}

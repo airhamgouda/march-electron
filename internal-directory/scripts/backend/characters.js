@@ -3,6 +3,7 @@
 
 const characters = (function () {
   // Config Files
+  const chance = require('chance').Chance();
   let lowMain = config.mainCharacterLevelBase;
   let highMain = config.mainCharacterLevelCap;
 
@@ -40,19 +41,26 @@ const characters = (function () {
 
   // Run at start to generate new character, with random skill starts from level 1-10
   const createMainCharacter = function (firstName, lastName) {
-
+    let first = firstName;
+    let last = lastName;
 
     let skills = (skillGenerator(lowMain, highMain));
     while (skills === undefined) {
       skills = skillGenerator(lowMain, highMain);
     }
+    if (firstName === '') {
+      first = chance.first();
+    }
 
+    if (lastName === '') {
+      last = chance.last();
+    }
 
 
     return {
       name: {
-        first: firstName,
-        last: lastName
+        first: first,
+        last: last
       },
       skills: skills,
       experience: {
@@ -67,6 +75,7 @@ const characters = (function () {
   };
 
   return {
+    skillGenerator,
     createMainCharacter
   };
 })();

@@ -1,0 +1,23 @@
+{
+  "name": {
+    "first": "Minerva",
+    "last": "Caponi"
+  },
+  "skills": {
+    "strength": 5,
+    "constitution": 4,
+    "dexterity": 3,
+    "intelligence": 5,
+    "wisdom": 8,
+    "charisma": 4,
+    "level": 9
+  },
+  "experience": {
+    "strengthXp": 1.9000000000000006,
+    "constitutionXp": 1.7100000000000004,
+    "dexterityXp": 1.5200000000000002,
+    "intelligenceXp": 1.583333333333333,
+    "wisdomXp": 2.469999999999999,
+    "charismaXp": 1.7100000000000004
+  }
+}
