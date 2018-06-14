@@ -4,9 +4,13 @@
 function newCharacterButton() {
   const first = document.getElementById('first-name').value;
   const last = document.getElementById('last-name').value;
+  save.localVillageSave = {};
+  village.villagerCount = 0;
+  village.cap = 0;
   save.localSave = characters.createMainCharacter(first, last);
   save.saveGame(save.localSave, save.localVillageSave);
-  save.localVillageSave = village.generateVillagers(5);
+
+
 
   save.saveGame(save.localSave, save.localVillageSave);
   const newSheet = config.characterInfoWithLabels();

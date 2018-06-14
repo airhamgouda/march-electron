@@ -1,5 +1,5 @@
 'use strict';
-/*global save $ trainer canvas renderMap*/
+/*global save $ village trainer canvas renderMap*/
 
 let loadSheet =
   `
@@ -78,6 +78,7 @@ function updateUI() {
 let terminalCount = 0;
 
 setInterval(function () {
+  village.solveCap();
   trainer.processRate();
   trainer.trainStrength();
   trainer.trainConstitution();

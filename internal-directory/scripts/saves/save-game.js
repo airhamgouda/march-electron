@@ -1,12 +1,12 @@
 'use strict';
 /*global $ */
 // Meta Data
-const fs = require('fs');
+
 
 // Save game block
 const save = (function () {
 
-
+  const fs = require('fs');
 
   let playerSave = fs.readFileSync('./internal-directory/scripts/saves/save.json');
   let villageSave = fs.readFileSync('./internal-directory/scripts/saves/village-save.json');
@@ -28,7 +28,7 @@ const save = (function () {
     localSave,
     localVillageSave,
     saveGame,
-
+    fs,
 
   };
 
