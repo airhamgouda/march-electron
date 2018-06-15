@@ -1,25 +1,32 @@
 {
   "0": {
+    "met": true,
     "name": {
-      "first": "Louise",
-      "last": "Huet"
+      "first": "Ernest",
+      "last": "Pengel"
     },
     "skills": {
-      "strength": 6,
-      "constitution": 3,
-      "dexterity": 6,
-      "intelligence": 5,
-      "wisdom": 6,
+      "strength": 3,
+      "constitution": 8,
+      "dexterity": 8,
+      "intelligence": 3,
+      "wisdom": 4,
       "charisma": 3,
-      "level": 9
+      "level": 9,
+      "hp": 35
     },
     "experience": {
-      "strengthXp": 95.58999999999966,
-      "constitutionXp": 69.51999999999957,
-      "dexterityXp": 95.58999999999966,
-      "intelligenceXp": 86.8999999999972,
-      "wisdomXp": 95.58999999999966,
-      "charismaXp": 69.51999999999957
+      "strengthXp": 9.059999999999999,
+      "constitutionXp": 16.609999999999964,
+      "dexterityXp": 16.609999999999964,
+      "intelligenceXp": 9.059999999999999,
+      "wisdomXp": 10.569999999999958,
+      "charismaXp": 9.059999999999999
+    },
+    "inventory": {
+      "ironSword": {
+        "damage": 4
+      }
     }
   }
 }

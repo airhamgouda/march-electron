@@ -168,7 +168,7 @@ const canvas = (function () {
       // North
       if (northTile === 4) {
         events.water.north();
-      } else if (northTile === 60) {
+      } else if (northTile === 100) {
         events.npcDemo.north();
       } else {
         $('.north').remove();
@@ -178,7 +178,7 @@ const canvas = (function () {
       // South
       if (southTile === 4) {
         events.water.south();
-      } else if (southTile === 60) {
+      } else if (southTile === 100) {
         events.npcDemo.south();
       } else {
         $('.south').remove();
@@ -188,7 +188,7 @@ const canvas = (function () {
       // East
       if (eastTile === 4) {
         events.water.east();
-      } else if (eastTile === 60) {
+      } else if (eastTile === 100) {
         events.npcDemo.east();
       } else {
         $('.east').remove();
@@ -198,7 +198,7 @@ const canvas = (function () {
       // West
       if (westTile === 4) {
         events.water.west();
-      } else if (westTile === 60) {
+      } else if (westTile === 100) {
         events.npcDemo.west();
       } else {
         $('.west').remove();

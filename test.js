@@ -35,6 +35,7 @@ let data2 = [{
 function merge(dt1, dt2) {
   let result = [];
 
+
   for (let i = 0; i < dt1.length; i++) {
     if (dt1[i].id === dt2[i].id) {
       result.push({

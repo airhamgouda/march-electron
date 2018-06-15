@@ -8,11 +8,8 @@ function newCharacterButton() {
   village.villagerCount = 0;
   village.cap = 0;
   save.localSave = characters.createMainCharacter(first, last);
-  save.saveGame(save.localSave, save.localVillageSave);
+  save.saveGame(save.localSave, save.localVillageSave, save.localEnemySave);
 
-
-
-  save.saveGame(save.localSave, save.localVillageSave);
   const newSheet = config.characterInfoWithLabels();
   $('.character-data').remove();
   $('.character-data').remove();

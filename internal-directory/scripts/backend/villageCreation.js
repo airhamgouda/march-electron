@@ -21,6 +21,7 @@ const village = (function () {
       this.villagerCount = 0;
       for (var v = 0; v < this.cap; v++) {
         if (save.localVillageSave[`${v}`] !== undefined) {
+          console.log('He is alive!');
           this.villagerCount++;
         }
       }
@@ -53,10 +54,10 @@ const village = (function () {
 
 
 
-  function generateVillagers(num) {
+  function generateVillagers() {
 
     let villagers = save.localVillageSave;
-    for (let i = 0; i < num; i++) {
+    for (let i = 0; i < this.cap; i++) {
 
       let firstName = chance.first();
       let lastName = chance.last();
@@ -65,23 +66,35 @@ const village = (function () {
         skills = characters.skillGenerator(lowMain, highMain);
       }
       let id = i;
+      // console.log(id);
+      if (villagers[id]) {
+        // console.log('Villager already exists');
 
-      villagers[id] = {
-        name: {
-          first: firstName,
-          last: lastName
-        },
-        skills: skills,
-        experience: {
-          strengthXp: 0,
-          constitutionXp: 0,
-          dexterityXp: 0,
-          intelligenceXp: 0,
-          wisdomXp: 0,
-          charismaXp: 0
-        }
-      };
+      }
+      else {
 
+        villagers[id] = {
+          met: false,
+          name: {
+            first: firstName,
+            last: lastName
+          },
+          skills: skills,
+          experience: {
+            strengthXp: 0,
+            constitutionXp: 0,
+            dexterityXp: 0,
+            intelligenceXp: 0,
+            wisdomXp: 0,
+            charismaXp: 0
+          },
+          inventory: {
+            ironSword: {
+              damage: 4
+            }
+          }
+        };
+      }
 
     }
     return villagers;

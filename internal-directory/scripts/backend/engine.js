@@ -1,5 +1,7 @@
 'use strict';
-/*global save $ village events trainer canvas renderMap*/
+/*global config save $ village events trainer canvas renderMap*/
+var sound = document.getElementById('sound');
+sound.volume = 0.0025;
 
 let loadSheet =
   `
@@ -81,8 +83,9 @@ let terminalCount = 0;
 setInterval(function () {
 
   try {
-
-    village.generateVillagers(village.cap - village.villagerCount);
+    if (village.cap !== village.villagerCount) {
+      village.generateVillagers();
+    }
     trainer.processRate();
     trainer.trainStrength();
     trainer.trainConstitution();
@@ -92,18 +95,18 @@ setInterval(function () {
     trainer.trainCharisma();
     trainer.processLevels();
     updateUI();
-    save.saveGame(save.localSave, save.localVillageSave);
+    save.saveGame(save.localSave, save.localVillageSave, save.localEnemySave);
     village.solveCap();
-    $('.terminal').append('<p class="gc">Trained</p>');
+    // $('.terminal').append('<p class="trained">Trained</p>');
     terminalCount++;
     if (terminalCount > 7) {
-      $('.gc').remove();
+      $('.trained').remove();
       terminalCount = 0;
     }
   }
   catch (err) {
     console.log('Error caught: ' + err.messsage);
-    village.generateVillagers(village.cap - village.villagerCount);
+    village.generateVillagers();
   }
 }, 1000);
 
@@ -112,7 +115,15 @@ canvas.startCanvas();
 // Handled in canvas.js
 
 
-// Event delegation
+// Cooldown handler
+
+
+setInterval(function () {
+  for (let i = 0; i < config.cooldown.length; i++) {
+    if (config.cooldown[i] > 0)
+      config.cooldown[i]--;
+  }
+}, 1000);
 
 
 

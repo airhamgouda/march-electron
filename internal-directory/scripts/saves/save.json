@@ -1,23 +1,24 @@
 {
   "name": {
-    "first": "Marcus",
-    "last": "Lastrucci"
+    "first": "Melvin",
+    "last": "Coleman"
   },
   "skills": {
-    "strength": 4,
-    "constitution": 7,
-    "dexterity": 5,
+    "strength": 7,
+    "constitution": 6,
+    "dexterity": 6,
     "intelligence": 3,
-    "wisdom": 4,
+    "wisdom": 3,
     "charisma": 4,
-    "level": 8
+    "level": 9,
+    "hp": 30
   },
   "experience": {
-    "strengthXp": 68.8800000000096,
-    "constitutionXp": 598.4000000000675,
-    "dexterityXp": 478.7199999999733,
-    "intelligenceXp": 299.20000000003375,
-    "wisdomXp": 68.8800000000096,
-    "charismaXp": 68.8800000000096
+    "strengthXp": 15.59999999999996,
+    "constitutionXp": 14.039999999999983,
+    "dexterityXp": 14.039999999999983,
+    "intelligenceXp": 7.79999999999998,
+    "wisdomXp": 9.359999999999989,
+    "charismaXp": 10.920000000000025
   }
 }

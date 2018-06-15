@@ -1,5 +1,5 @@
 'use strict';
-/*global save*/
+/*global $ save*/
 // Control Center
 // Adjust settings here!
 
@@ -11,14 +11,26 @@ const config = (function () {
   // 0 = Off
   // 1 = On
 
+  // Clear Terminal
+  function clearTerminal(sec) {
+    setTimeout(function () {
+      $('.gc').remove();
+    }, 5000);
+  }
+
+  //Cooldown handler
+  // 0 - npcDemo
+  const cooldown = [0];
   const Switch = {
     fpsCounter: 1,
     mapSwitch: 1,
   };
   // Designate tiles as interactive
-
+  // 0-99 Tiles
+  // 100-199 Villagers
+  // 200-299 Enemies
   const interactive = [
-    4, 60
+    4, 100, 200
   ];
 
   // Character Generation Settings
@@ -66,13 +78,19 @@ const config = (function () {
     3: { colour: '#286625', floor: floorTypes.solid, sprite: [{ x: 120, y: 0, w: 40, h: 40 }] },
     4: { colour: '#678fd9', floor: floorTypes.water, sprite: [{ x: 160, y: 0, w: 40, h: 40 }] },
 
-    // People
-    // .grass
-    60: { colour: '#678fd9', floor: floorTypes.solid, sprite: [{ x: 40, y: 40, w: 40, h: 40 }] },
-
     // House Tiles
     // .bedroom
-    80: { colour: '#f4426b', floor: floorTypes.path, sprite: [{ x: 200, y: 0, w: 40, h: 40 }] }
+    80: { colour: '#f4426b', floor: floorTypes.path, sprite: [{ x: 200, y: 0, w: 40, h: 40 }] },
+
+    // People
+    // .demo1
+    100: { colour: '#678fd9', floor: floorTypes.solid, sprite: [{ x: 40, y: 40, w: 40, h: 40 }] },
+
+    // Enemy
+    // .demoBase1
+    200: { colour: '#678fd9', floor: floorTypes.solid, sprite: [{ x: 80, y: 40, w: 40, h: 40 }] },
+
+
   };
 
   // .maps
@@ -83,19 +101,13 @@ const config = (function () {
     test: [
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 0,
-      0, 2, 2, 2, 2, 2, 2, 1, 60, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 0,
+      0, 2, 2, 2, 2, 2, 2, 1, 100, 1, 1, 1, 1, 1, 200, 1, 2, 2, 2, 0,
       0, 2, 4, 4, 4, 3, 2, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 0,
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 
     ],
 
-    test2: [
-      1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-      0, 2, 2, 4, 2, 2, 2, 60, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 0,
-      0, 2, 2, 4, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 0,
-      0, 2, 4, 4, 4, 3, 2, 1, 2, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2, 0,
-      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    ]
+
 
   };
 
@@ -162,7 +174,9 @@ const config = (function () {
     floorTypes,
     tileTypes,
     directions,
-    interactive
+    interactive,
+    cooldown,
+    clearTerminal
   };
 })();
 
