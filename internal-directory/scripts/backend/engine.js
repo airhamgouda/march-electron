@@ -29,29 +29,32 @@ setInterval(function () {
 let loadSheet =
   `
 <table class="character-data" style="width:100%">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th> 
-    <th>Strength</th>
-    <th>Constitution</th>
-    <th>Dexterity</th>
-    <th>Intelligence</th>
-    <th>Wisdom</th>
-    <th>Charisma</th>
-    <th>Level</th>
-  </tr>
-  <tr>
-    <td>${save.localSave.name.first}</td>
-    <td>${save.localSave.name.last}</td>
-    <td>${save.localSave.skills.strength}</td>
-    <td>${save.localSave.skills.constitution}</td>
-    <td>${save.localSave.skills.dexterity}</td>
-    <td>${save.localSave.skills.intelligence}</td>
-    <td>${save.localSave.skills.wisdom}</td>
-    <td>${save.localSave.skills.charisma}</td>
-    <td>${save.localSave.skills.level}</td>
-  </tr>
-</table>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Strength</th>
+            <th>Constitution</th>
+            <th>Dexterity</th>
+            <th>Intelligence</th>
+            <th>Wisdom</th>
+            <th>Charisma</th>
+            <th>Level</th>
+            <th>HP</th>
+          </tr>
+          <tr>
+            <td>${save.localSave.name.first}</td>
+            <td>${save.localSave.name.last}</td>
+            <td>${save.localSave.skills.strength} + ${save.localSave.buffs.strength}</td>
+            <td>${save.localSave.skills.constitution} + ${save.localSave.buffs.constitution}</td>
+            <td>${save.localSave.skills.dexterity} + ${save.localSave.buffs.dexterity}</td>
+            <td>${save.localSave.skills.intelligence} + ${save.localSave.buffs.intelligence}</td>
+            <td>${save.localSave.skills.wisdom} + ${save.localSave.buffs.wisdom}</td>
+            <td>${save.localSave.skills.charisma} + ${save.localSave.buffs.charisma}</td>
+             <td>${save.localSave.skills.level}</td>
+             <td>${save.localSave.skills.hp}</td>
+
+          </tr>
+        </table>
 
 
 `;
@@ -69,30 +72,32 @@ function updateUI() {
   let loadSheet =
     `
 <table class="character-data" style="width:100%">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th> 
-    <th>Strength</th>
-    <th>Constitution</th>
-    <th>Dexterity</th>
-    <th>Intelligence</th>
-    <th>Wisdom</th>
-    <th>Charisma</th>
-    <th>Level</th>
-  </tr>
-  <tr>
-    <td>${save.localSave.name.first}</td>
-    <td>${save.localSave.name.last}</td>
-    <td>${save.localSave.skills.strength}</td>
-    <td>${save.localSave.skills.constitution}</td>
-    <td>${save.localSave.skills.dexterity}</td>
-    <td>${save.localSave.skills.intelligence}</td>
-    <td>${save.localSave.skills.wisdom}</td>
-    <td>${save.localSave.skills.charisma}</td>
-    <td>${save.localSave.skills.level}</td>
-  </tr>
-</table>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Strength</th>
+            <th>Constitution</th>
+            <th>Dexterity</th>
+            <th>Intelligence</th>
+            <th>Wisdom</th>
+            <th>Charisma</th>
+            <th>Level</th>
+            <th>HP</th>
+          </tr>
+          <tr>
+            <td>${save.localSave.name.first}</td>
+            <td>${save.localSave.name.last}</td>
+            <td>${save.localSave.skills.strength} + ${save.localSave.buffs.strength}</td>
+            <td>${save.localSave.skills.constitution} + ${save.localSave.buffs.constitution}</td>
+            <td>${save.localSave.skills.dexterity} + ${save.localSave.buffs.dexterity}</td>
+            <td>${save.localSave.skills.intelligence} + ${save.localSave.buffs.intelligence}</td>
+            <td>${save.localSave.skills.wisdom} + ${save.localSave.buffs.wisdom}</td>
+            <td>${save.localSave.skills.charisma} + ${save.localSave.buffs.charisma}</td>
+             <td>${save.localSave.skills.level}</td>
+             <td>${save.localSave.skills.hp}</td>
 
+          </tr>
+        </table>
 
 `;
 

@@ -1,0 +1,23 @@
+Date: 6/15/2018
+Time: 3:00 PM MST
+User: Jaired Re
+
+// Goals
+1. Be able to move around the map without leaving it. 
+2. Talk to villager
+a. Talk to villager again
+b. See different responses possible
+4. Equip sword
+5. Ask for help in game
+6. Create a new game with character with 5+ charisma to see different dialog options
+a. Repeat
+
+
+
+// Known Bugs
+1. Enemy is not interactable
+2. Start position bugged
+3. Cannot unequip sword
+
+
+//Notes

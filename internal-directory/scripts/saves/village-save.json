@@ -2,26 +2,57 @@
   "0": {
     "met": true,
     "name": {
-      "first": "Delia",
-      "last": "Daniels"
+      "first": "Lewis",
+      "last": "Schmitt"
     },
     "skills": {
-      "strength": 6,
+      "strength": 4,
       "constitution": 4,
-      "dexterity": 3,
-      "intelligence": 3,
-      "wisdom": 7,
-      "charisma": 5,
-      "level": 8,
-      "hp": 23
+      "dexterity": 6,
+      "intelligence": 7,
+      "wisdom": 4,
+      "charisma": 4,
+      "level": 9,
+      "hp": 25
     },
     "experience": {
-      "strengthXp": 5.219999999999996,
-      "constitutionXp": 4.059999999999996,
-      "dexterityXp": 3.479999999999992,
-      "intelligenceXp": 3.479999999999992,
-      "wisdomXp": 5.800000000000003,
-      "charismaXp": 4.639999999999993
+      "strengthXp": 37.39999999999986,
+      "constitutionXp": 37.39999999999986,
+      "dexterityXp": 44.20000000000016,
+      "intelligenceXp": 47.60000000000017,
+      "wisdomXp": 37.39999999999986,
+      "charismaXp": 37.39999999999986
+    },
+    "inventory": {
+      "ironSword": {
+        "equipped": true,
+        "damage": 4
+      }
+    }
+  },
+  "1": {
+    "met": true,
+    "name": {
+      "first": "Roy",
+      "last": "Mcdonald"
+    },
+    "skills": {
+      "strength": 3,
+      "constitution": 5,
+      "dexterity": 4,
+      "intelligence": 4,
+      "wisdom": 5,
+      "charisma": 7,
+      "level": 8,
+      "hp": 25
+    },
+    "experience": {
+      "strengthXp": 23.799999999999873,
+      "constitutionXp": 30.599999999999955,
+      "dexterityXp": 27.199999999999598,
+      "intelligenceXp": 27.199999999999598,
+      "wisdomXp": 30.599999999999955,
+      "charismaXp": 37.39999999999986
     },
     "inventory": {
       "ironSword": {

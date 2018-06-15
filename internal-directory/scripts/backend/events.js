@@ -88,17 +88,22 @@ const events = (function () {
               config.clearTerminal(10);
             }, 6001);
           }
-          save.localSave.inventory.ironSword = {
+          save.localSave.inventory.push({
+            name: 'Iron Sword',
             equipped: false,
-            damage: 4
-          };
+            damage: 4,
+            class: 'weapon',
+            description: 'A rusted iron blade.. It gets the job done.'
+          });
+
+
           save.localVillageSave[0].met = true;
 
         } else if (save.localVillageSave[0].met === true) {
           // ...
           if (village.cap === 1) {
 
-            if (save.localSave.inventory.ironSword.equipped === false) {
+            if (save.localSave.inventory[0] === false) {
               $('.terminal').append(npcDemo.snippet.noSword);
               $('.terminal').append(npcDemo.snippet.haveIronSword);
             } else {
@@ -106,7 +111,7 @@ const events = (function () {
             }
           } else {
             $('.terminal').append(npcDemo.snippet.intro22);
-            if (save.localSave.inventory.ironSword.equipped === false) {
+            if (save.localSave.inventory[0].equipped === false) {
               $('.terminal').append(npcDemo.snippet.haveIronSword);
             }
           }

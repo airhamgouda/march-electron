@@ -1,30 +1,41 @@
 {
   "name": {
-    "first": "Jennie",
-    "last": "Giovacchini"
+    "first": "Carl",
+    "last": "Martens"
   },
   "skills": {
-    "strength": 5,
-    "constitution": 4,
+    "strength": 6,
+    "constitution": 6,
     "dexterity": 4,
-    "intelligence": 5,
-    "wisdom": 5,
-    "charisma": 3,
-    "level": 8,
-    "hp": 23
+    "intelligence": 4,
+    "wisdom": 3,
+    "charisma": 6,
+    "level": 9,
+    "hp": 30
+  },
+  "buffs": {
+    "strength": 2,
+    "constitution": 0,
+    "dexterity": 0,
+    "intelligence": 0,
+    "wisdom": 0,
+    "charisma": 0
   },
   "experience": {
-    "strengthXp": 5.899999999999995,
-    "constitutionXp": 5.309999999999996,
-    "dexterityXp": 5.309999999999996,
-    "intelligenceXp": 4.916666666666666,
-    "wisdomXp": 5.899999999999995,
-    "charismaXp": 4.720000000000002
+    "strengthXp": 34.100000000000215,
+    "constitutionXp": 34.100000000000215,
+    "dexterityXp": 27.27999999999977,
+    "intelligenceXp": 22.733333333333274,
+    "wisdomXp": 23.870000000000076,
+    "charismaXp": 34.100000000000215
   },
-  "inventory": {
-    "ironSword": {
+  "inventory": [
+    {
+      "name": "Iron Sword",
       "equipped": true,
-      "damage": 4
+      "damage": 4,
+      "class": "weapon",
+      "description": "A rusted iron blade.. It gets the job done."
     }
-  }
+  ]
 }

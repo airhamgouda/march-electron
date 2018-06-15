@@ -129,17 +129,20 @@ const config = (function () {
             <th>Wisdom</th>
             <th>Charisma</th>
             <th>Level</th>
+            <th>HP</th>
           </tr>
           <tr>
             <td>${save.localSave.name.first}</td>
             <td>${save.localSave.name.last}</td>
-            <td>${save.localSave.skills.strength}</td>
-            <td>${save.localSave.skills.constitution}</td>
-            <td>${save.localSave.skills.dexterity}</td>
-            <td>${save.localSave.skills.intelligence}</td>
-            <td>${save.localSave.skills.wisdom}</td>
-            <td>${save.localSave.skills.charisma}</td>
-            <td>${save.localSave.skills.level}</td>
+            <td>${save.localSave.skills.strength} + ${save.localSave.buffs.strength}</td>
+            <td>${save.localSave.skills.constitution} + ${save.localSave.buffs.constitution}</td>
+            <td>${save.localSave.skills.dexterity} + ${save.localSave.buffs.dexterity}</td>
+            <td>${save.localSave.skills.intelligence} + ${save.localSave.buffs.intelligence}</td>
+            <td>${save.localSave.skills.wisdom} + ${save.localSave.buffs.wisdom}</td>
+            <td>${save.localSave.skills.charisma} + ${save.localSave.buffs.charisma}</td>
+             <td>${save.localSave.skills.level}</td>
+             <td>${save.localSave.skills.hp}</td>
+
           </tr>
         </table>
           `;

@@ -65,6 +65,15 @@ const characters = (function () {
         last: last
       },
       skills: skills,
+      buffs: {
+        strength: 0,
+        constitution: 0,
+        dexterity: 0,
+        intelligence: 0,
+        wisdom: 0,
+        charisma: 0,
+
+      },
       experience: {
         strengthXp: 0,
         constitutionXp: 0,
@@ -73,7 +82,7 @@ const characters = (function () {
         wisdomXp: 0,
         charismaXp: 0
       },
-      inventory: {}
+      inventory: []
     };
   };
 
