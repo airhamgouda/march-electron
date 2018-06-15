@@ -90,6 +90,7 @@ const village = (function () {
           },
           inventory: {
             ironSword: {
+              equipped: true,
               damage: 4
             }
           }

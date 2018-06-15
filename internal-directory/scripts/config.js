@@ -20,7 +20,8 @@ const config = (function () {
 
   //Cooldown handler
   // 0 - npcDemo
-  const cooldown = [0];
+  // 1 - terminal_clear
+  const cooldown = [0, 0];
   const Switch = {
     fpsCounter: 1,
     mapSwitch: 1,
@@ -88,7 +89,7 @@ const config = (function () {
 
     // Enemy
     // .demoBase1
-    200: { colour: '#678fd9', floor: floorTypes.solid, sprite: [{ x: 80, y: 40, w: 40, h: 40 }] },
+    200: { colour: '#678fd9', floor: floorTypes.path, sprite: [{ x: 80, y: 40, w: 40, h: 40 }] },
 
 
   };

@@ -1,7 +1,30 @@
 'use strict';
 /*global config save $ village events trainer canvas renderMap*/
 var sound = document.getElementById('sound');
-sound.volume = 0.0025;
+sound.volume = 0.25;
+
+// Detect Overflow
+
+var element = document.querySelector('.terminal');
+
+setInterval(function () {
+  console.log('check');
+  if ((element.offsetHeight < element.scrollHeight) || (element.offsetWidth < element.scrollWidth)) {
+    // your element have overflow
+    element.scrollTop = element.scrollHeight;
+    if (config.cooldown[1] === 0) {
+      setTimeout(function () {
+        $('.gc').remove();
+      }, 10000);
+      config.cooldown[1] = 10;
+    }
+
+  }
+  else {
+    //your element don't have overflow
+  }
+}, 500);
+
 
 let loadSheet =
   `
@@ -98,11 +121,11 @@ setInterval(function () {
     save.saveGame(save.localSave, save.localVillageSave, save.localEnemySave);
     village.solveCap();
     // $('.terminal').append('<p class="trained">Trained</p>');
-    terminalCount++;
-    if (terminalCount > 7) {
-      $('.trained').remove();
-      terminalCount = 0;
-    }
+    // terminalCount++;
+    // if (terminalCount > 7) {
+    //   $('.trained').remove();
+    //   terminalCount = 0;
+    // }
   }
   catch (err) {
     console.log('Error caught: ' + err.messsage);

@@ -2,29 +2,30 @@
   "0": {
     "met": true,
     "name": {
-      "first": "Ernest",
-      "last": "Pengel"
+      "first": "Delia",
+      "last": "Daniels"
     },
     "skills": {
-      "strength": 3,
-      "constitution": 8,
-      "dexterity": 8,
+      "strength": 6,
+      "constitution": 4,
+      "dexterity": 3,
       "intelligence": 3,
-      "wisdom": 4,
-      "charisma": 3,
-      "level": 9,
-      "hp": 35
+      "wisdom": 7,
+      "charisma": 5,
+      "level": 8,
+      "hp": 23
     },
     "experience": {
-      "strengthXp": 9.059999999999999,
-      "constitutionXp": 16.609999999999964,
-      "dexterityXp": 16.609999999999964,
-      "intelligenceXp": 9.059999999999999,
-      "wisdomXp": 10.569999999999958,
-      "charismaXp": 9.059999999999999
+      "strengthXp": 5.219999999999996,
+      "constitutionXp": 4.059999999999996,
+      "dexterityXp": 3.479999999999992,
+      "intelligenceXp": 3.479999999999992,
+      "wisdomXp": 5.800000000000003,
+      "charismaXp": 4.639999999999993
     },
     "inventory": {
       "ironSword": {
+        "equipped": true,
         "damage": 4
       }
     }

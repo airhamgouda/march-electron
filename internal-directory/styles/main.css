@@ -1,7 +1,25 @@
+body {
+    background-color: rgba(87, 43, 45, 0.705);
+}
+
+#sound {
+     visibility: hidden;
+}
+
+
+.terminal-input {
+    box-sizing: border-box;
+    border: 1px solid rgb(0, 0, 0);
+    height: 30px;
+    width: 945px;
+    position: relative;
+    
+    
+}
 .map {
     box-sizing: border-box;
     border: 2px solid rgb(0, 0, 0);
-    float: right;
+    float: left;
     margin: auto;    
    
     height: 300px;
@@ -37,6 +55,8 @@ button:hover {
     float: left;
     height: 300px;
     width: 345px;
+    
+    
 }
 
 
@@ -48,5 +68,7 @@ button:hover {
     margin: auto;    
     height: 300px;
     width: 300px;
+    overflow:auto;
+    background-color: white;
 }
 

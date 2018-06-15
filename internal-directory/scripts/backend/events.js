@@ -2,6 +2,9 @@
 /*global village config $ save */
 
 const events = (function () {
+  if (village.cap !== village.villagerCount) {
+    village.generateVillagers();
+  }
 
   function renderText(arr) {
     console.log('render');
@@ -45,6 +48,11 @@ const events = (function () {
   const npcDemo = {
 
     snippet: {
+      giftIronSword: '<p class="gc">You are given an iron sword. Type "equip sword" to hold it in your hand. </p>',
+
+      haveIronSword: '<p class="gc">You have an unequipped iron sword in your inventory. Type "equip sword" to hold it in your hand. </p>',
+
+      noSword: '<p class="gc">Do you really expect to fight with no sword...?</p>',
       intro11: `<p class="gc">"${save.localSave.name.first}! It's me,  ${save.localVillageSave[0].name.first}!
           I cant believe you survived...  it is all gone... the whole town was razed.. A few of us have retreated into woods
           but they got most of us. A few of us have made camp here, but there isnt much room. There are more supplies to the
@@ -68,17 +76,39 @@ const events = (function () {
         if (save.localVillageSave[0].met === false) {
           if (village.cap === 1) {
             $('.terminal').append(npcDemo.snippet.intro11);
+            setTimeout(function () {
+              $('.terminal').append(npcDemo.snippet.giftIronSword);
+              config.clearTerminal(10);
+            }, 6001);
           } else {
             $('.terminal').append(npcDemo.snippet.intro21);
+            save.localVillageSave[1].met = true;
+            setTimeout(function () {
+              $('.terminal').append(npcDemo.snippet.giftIronSword);
+              config.clearTerminal(10);
+            }, 6001);
           }
+          save.localSave.inventory.ironSword = {
+            equipped: false,
+            damage: 4
+          };
           save.localVillageSave[0].met = true;
 
         } else if (save.localVillageSave[0].met === true) {
           // ...
           if (village.cap === 1) {
-            $('.terminal').append(npcDemo.snippet.intro12);
+
+            if (save.localSave.inventory.ironSword.equipped === false) {
+              $('.terminal').append(npcDemo.snippet.noSword);
+              $('.terminal').append(npcDemo.snippet.haveIronSword);
+            } else {
+              $('.terminal').append(npcDemo.snippet.intro12);
+            }
           } else {
             $('.terminal').append(npcDemo.snippet.intro22);
+            if (save.localSave.inventory.ironSword.equipped === false) {
+              $('.terminal').append(npcDemo.snippet.haveIronSword);
+            }
           }
         }
         config.cooldown[0] = 5;

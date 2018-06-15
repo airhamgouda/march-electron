@@ -1,24 +1,30 @@
 {
   "name": {
-    "first": "Melvin",
-    "last": "Coleman"
+    "first": "Jennie",
+    "last": "Giovacchini"
   },
   "skills": {
-    "strength": 7,
-    "constitution": 6,
-    "dexterity": 6,
-    "intelligence": 3,
-    "wisdom": 3,
-    "charisma": 4,
-    "level": 9,
-    "hp": 30
+    "strength": 5,
+    "constitution": 4,
+    "dexterity": 4,
+    "intelligence": 5,
+    "wisdom": 5,
+    "charisma": 3,
+    "level": 8,
+    "hp": 23
   },
   "experience": {
-    "strengthXp": 15.59999999999996,
-    "constitutionXp": 14.039999999999983,
-    "dexterityXp": 14.039999999999983,
-    "intelligenceXp": 7.79999999999998,
-    "wisdomXp": 9.359999999999989,
-    "charismaXp": 10.920000000000025
+    "strengthXp": 5.899999999999995,
+    "constitutionXp": 5.309999999999996,
+    "dexterityXp": 5.309999999999996,
+    "intelligenceXp": 4.916666666666666,
+    "wisdomXp": 5.899999999999995,
+    "charismaXp": 4.720000000000002
+  },
+  "inventory": {
+    "ironSword": {
+      "equipped": true,
+      "damage": 4
+    }
   }
 }

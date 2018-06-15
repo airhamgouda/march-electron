@@ -21,7 +21,7 @@ const characters = (function () {
     const charisma = Math.floor((Math.random() * 10) + 3);
     const total = strength + constitution + dexterity + intelligence + wisdom + charisma;
     const level = Math.floor(total / Math.PI);
-    const hp = ((constitution / 2) + (level / 3)) * 5;
+    const hp = Math.floor(((constitution / 2) + (level / 3)) * 5);
     let result = {
       strength,
       constitution,
@@ -73,6 +73,7 @@ const characters = (function () {
         wisdomXp: 0,
         charismaXp: 0
       },
+      inventory: {}
     };
   };
 
