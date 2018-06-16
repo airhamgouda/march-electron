@@ -9,7 +9,9 @@ const button = (function () {
   function newCharacterButton() {
     const first = '';
     const last = '';
-    save.localVillageSave = {};
+    save.localVillageSave = {
+      villagers: []
+    };
     village.villagerCount = 0;
     village.cap = 0;
     save.localSave = characters.createMainCharacter(first, last);

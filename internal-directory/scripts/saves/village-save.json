@@ -1,64 +1,79 @@
 {
-  "0": {
-    "met": true,
-    "name": {
-      "first": "Lewis",
-      "last": "Schmitt"
-    },
-    "skills": {
-      "strength": 4,
-      "constitution": 4,
-      "dexterity": 6,
-      "intelligence": 7,
-      "wisdom": 4,
-      "charisma": 4,
-      "level": 9,
-      "hp": 25
-    },
-    "experience": {
-      "strengthXp": 37.39999999999986,
-      "constitutionXp": 37.39999999999986,
-      "dexterityXp": 44.20000000000016,
-      "intelligenceXp": 47.60000000000017,
-      "wisdomXp": 37.39999999999986,
-      "charismaXp": 37.39999999999986
-    },
-    "inventory": {
-      "ironSword": {
-        "equipped": true,
-        "damage": 4
-      }
+  "villagers": [
+    {
+      "met": true,
+      "name": {
+        "first": "Jason",
+        "last": "Reid"
+      },
+      "skills": {
+        "strength": 4,
+        "constitution": 3,
+        "dexterity": 11,
+        "intelligence": 3,
+        "wisdom": 4,
+        "charisma": 3,
+        "level": 8,
+        "hp": 20
+      },
+      "experience": {
+        "strengthXp": 7.350000000000009,
+        "constitutionXp": 6.300000000000008,
+        "dexterityXp": 14.699999999999955,
+        "intelligenceXp": 6.300000000000008,
+        "wisdomXp": 7.350000000000009,
+        "charismaXp": 6.300000000000008
+      },
+      "buffs": {
+        "strength": 2,
+        "constitution": 2,
+        "dexterity": 0,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": 0
+      },
+      "inventory": [
+        {
+          "name": "Iron Sword",
+          "equipped": false,
+          "damage": 4,
+          "level": 3,
+          "buffType": "strength",
+          "buffAmt": 2,
+          "class": "weapon",
+          "description": "A rusted iron blade.. It gets the job done.",
+          "tags": [
+            "sword",
+            "iron sword",
+            "Iron sword",
+            "iron Sword",
+            "Iron Sword",
+            "ironsword",
+            "ironSword",
+            "Ironsword"
+          ]
+        },
+        {
+          "name": "Leather Helmet",
+          "equipped": false,
+          "defence": 4,
+          "level": 4,
+          "buffType": "constitution",
+          "buffAmt": 2,
+          "class": "helmet",
+          "description": "You see flakes coming off the side.. This helmet has seen better days",
+          "tags": [
+            "helmet",
+            "leather helmet",
+            "Leather helmet",
+            "leather Helmet",
+            "Leather Helmet",
+            "leatherhelmet",
+            "leatherHelmet",
+            "LeatherHelmet"
+          ]
+        }
+      ]
     }
-  },
-  "1": {
-    "met": true,
-    "name": {
-      "first": "Roy",
-      "last": "Mcdonald"
-    },
-    "skills": {
-      "strength": 3,
-      "constitution": 5,
-      "dexterity": 4,
-      "intelligence": 4,
-      "wisdom": 5,
-      "charisma": 7,
-      "level": 8,
-      "hp": 25
-    },
-    "experience": {
-      "strengthXp": 23.799999999999873,
-      "constitutionXp": 30.599999999999955,
-      "dexterityXp": 27.199999999999598,
-      "intelligenceXp": 27.199999999999598,
-      "wisdomXp": 30.599999999999955,
-      "charismaXp": 37.39999999999986
-    },
-    "inventory": {
-      "ironSword": {
-        "equipped": true,
-        "damage": 4
-      }
-    }
-  }
+  ]
 }

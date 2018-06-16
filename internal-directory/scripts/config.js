@@ -13,14 +13,16 @@ const config = (function () {
 
   // Clear Terminal
   function clearTerminal(sec) {
+    let second = sec * 1000;
     setTimeout(function () {
       $('.gc').remove();
-    }, 5000);
+    }, second);
   }
 
   //Cooldown handler
   // 0 - npcDemo
   // 1 - terminal_clear
+
   const cooldown = [0, 0];
   const Switch = {
     fpsCounter: 1,

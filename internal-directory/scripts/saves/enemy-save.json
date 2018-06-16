@@ -1,1 +1,18 @@
-{}
+{
+  "0": {
+    "id": 0,
+    "type": "goblin"
+  },
+  "1": {
+    "id": 1,
+    "type": "goblin"
+  },
+  "2": {
+    "id": 2,
+    "type": "goblin"
+  },
+  "3": {
+    "id": 3,
+    "type": "goblin"
+  }
+}

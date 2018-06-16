@@ -1,41 +1,114 @@
 {
   "name": {
-    "first": "Carl",
-    "last": "Martens"
+    "first": "Rosetta",
+    "last": "Clayton"
   },
   "skills": {
-    "strength": 6,
-    "constitution": 6,
-    "dexterity": 4,
+    "strength": 4,
+    "constitution": 7,
+    "dexterity": 3,
     "intelligence": 4,
-    "wisdom": 3,
-    "charisma": 6,
-    "level": 9,
+    "wisdom": 5,
+    "charisma": 4,
+    "level": 8,
     "hp": 30
   },
   "buffs": {
     "strength": 2,
-    "constitution": 0,
+    "constitution": 2,
     "dexterity": 0,
     "intelligence": 0,
     "wisdom": 0,
     "charisma": 0
   },
   "experience": {
-    "strengthXp": 34.100000000000215,
-    "constitutionXp": 34.100000000000215,
-    "dexterityXp": 27.27999999999977,
-    "intelligenceXp": 22.733333333333274,
-    "wisdomXp": 23.870000000000076,
-    "charismaXp": 34.100000000000215
+    "strengthXp": 15.440000000000012,
+    "constitutionXp": 21.229999999999944,
+    "dexterityXp": 13.510000000000035,
+    "intelligenceXp": 14.026666666666648,
+    "wisdomXp": 17.36999999999998,
+    "charismaXp": 15.440000000000012
   },
   "inventory": [
     {
       "name": "Iron Sword",
-      "equipped": true,
+      "equipped": false,
       "damage": 4,
+      "level": 3,
+      "buffType": "strength",
+      "buffAmt": 2,
       "class": "weapon",
-      "description": "A rusted iron blade.. It gets the job done."
+      "description": "A rusted iron blade.. It gets the job done.",
+      "tags": [
+        "sword",
+        "iron sword",
+        "Iron sword",
+        "iron Sword",
+        "Iron Sword",
+        "ironsword",
+        "ironSword",
+        "Ironsword"
+      ]
+    },
+    {
+      "name": "Leather Helmet",
+      "equipped": false,
+      "defence": 4,
+      "level": 4,
+      "buffType": "constitution",
+      "buffAmt": 2,
+      "class": "helmet",
+      "description": "You see flakes coming off the side.. This helmet has seen better days",
+      "tags": [
+        "helmet",
+        "leather helmet",
+        "Leather helmet",
+        "leather Helmet",
+        "Leather Helmet",
+        "leatherhelmet",
+        "leatherHelmet",
+        "LeatherHelmet"
+      ]
+    },
+    {
+      "name": "Iron Sword",
+      "equipped": false,
+      "damage": 4,
+      "level": 3,
+      "buffType": "strength",
+      "buffAmt": 2,
+      "class": "weapon",
+      "description": "A rusted iron blade.. It gets the job done.",
+      "tags": [
+        "sword",
+        "iron sword",
+        "Iron sword",
+        "iron Sword",
+        "Iron Sword",
+        "ironsword",
+        "ironSword",
+        "Ironsword"
+      ]
+    },
+    {
+      "name": "Leather Helmet",
+      "equipped": false,
+      "defence": 4,
+      "level": 4,
+      "buffType": "constitution",
+      "buffAmt": 2,
+      "class": "helmet",
+      "description": "You see flakes coming off the side.. This helmet has seen better days",
+      "tags": [
+        "helmet",
+        "leather helmet",
+        "Leather helmet",
+        "leather Helmet",
+        "Leather Helmet",
+        "leatherhelmet",
+        "leatherHelmet",
+        "LeatherHelmet"
+      ]
     }
   ]
 }

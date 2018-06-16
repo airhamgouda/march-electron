@@ -8,7 +8,7 @@ const village = (function () {
   const chance = require('chance').Chance();
   let lowMain = config.mainCharacterLevelBase;
   let highMain = config.mainCharacterLevelCap;
-  let villagerCount = 0;
+  let villagerCount = save.localVillageSave.villagers.length;
   let cap = 1 + Math.floor(save.localSave.skills.charisma / 5);
   // Solve for villager cap. If cap changes, either grant new villagers or kills some off
   function solveCap() {
@@ -52,6 +52,15 @@ const village = (function () {
   }
 
 
+  // To account for glitches, cheats, or bugs. General catch al
+
+  function calculateVillagerCount() {
+    this.villagerCount = save.localVillageSave.villagers.length;
+  }
+
+
+
+
 
 
   function generateVillagers() {
@@ -67,13 +76,14 @@ const village = (function () {
       }
       let id = i;
       // console.log(id);
-      if (villagers[id]) {
+      if (villagers.villagers[id]) {
         // console.log('Villager already exists');
 
       }
       else {
-
-        villagers[id] = {
+        // console.log(village.villagerCount + '/' + village.cap);
+        // console.log('new villager');
+        villagers.villagers.push({
           met: false,
           name: {
             first: firstName,
@@ -88,13 +98,39 @@ const village = (function () {
             wisdomXp: 0,
             charismaXp: 0
           },
-          inventory: {
-            ironSword: {
-              equipped: true,
-              damage: 4
-            }
-          }
-        };
+          buffs: {
+            strength: 2,
+            constitution: 2,
+            dexterity: 0,
+            intelligence: 0,
+            wisdom: 0,
+            charisma: 0
+          },
+          inventory: [
+            {
+              name: 'Iron Sword',
+              equipped: false,
+              damage: 4,
+              level: 3,
+              buffType: 'strength',
+              buffAmt: 2,
+              class: 'weapon',
+              description: 'A rusted iron blade.. It gets the job done.',
+              tags: ['sword', 'iron sword', 'Iron sword', 'iron Sword', 'Iron Sword', 'ironsword', 'ironSword', 'Ironsword']
+            },
+            {
+              name: 'Leather Helmet',
+              equipped: false,
+              defence: 4,
+              level: 4,
+              buffType: 'constitution',
+              buffAmt: 2,
+              class: 'helmet',
+              description: 'You see flakes coming off the side.. This helmet has seen better days',
+              tags: ['helmet', 'leather helmet', 'Leather helmet', 'leather Helmet', 'Leather Helmet', 'leatherhelmet', 'leatherHelmet', 'LeatherHelmet']
+            },
+          ]
+        });
       }
 
     }
@@ -110,7 +146,8 @@ const village = (function () {
     generateVillagers,
     solveCap,
     cap,
-    villagerCount
+    villagerCount,
+    calculateVillagerCount
   };
 })();
 

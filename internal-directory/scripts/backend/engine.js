@@ -1,29 +1,48 @@
 'use strict';
 /*global config save $ village events trainer canvas renderMap*/
 var sound = document.getElementById('sound');
-sound.volume = 0.25;
+sound.volume = 0;
+
+// Check for death
+
+if (save.localSave.death) {
+
+  if (save.localSave.death.companion === true) {
+
+    $('.terminal').append(`<p class="gc">${save.localSave.death.name} is dead. That much you know for sure. As you wake up in an unfamilar area, you see the smoke off in the distance. Surely, your companions must be that way. You better check to see if there are any survivors.</p>`);
+  } else {
+    $('.terminal').append(`<p class="gc">${save.localSave.death.name} is dead. That much you know for sure. As you wake up in an unfamilar area, you see the smoke off in the distance. You better check to see if there are any survivors.</p>`);
+  }
+
+  delete save.localSave.death;
+}
 
 // Detect Overflow
 
 var element = document.querySelector('.terminal');
 
-setInterval(function () {
-  console.log('check');
-  if ((element.offsetHeight < element.scrollHeight) || (element.offsetWidth < element.scrollWidth)) {
-    // your element have overflow
-    element.scrollTop = element.scrollHeight;
-    if (config.cooldown[1] === 0) {
-      setTimeout(function () {
-        $('.gc').remove();
-      }, 10000);
-      config.cooldown[1] = 10;
-    }
+$('.terminal').on('DOMNodeInserted DOMNodeRemoved', function () {
 
-  }
-  else {
-    //your element don't have overflow
-  }
-}, 500);
+  element.scrollTop = element.scrollHeight;
+
+});
+// setInterval(function () {
+//   console.log('check');
+//   if ((element.offsetHeight < element.scrollHeight) || (element.offsetWidth < element.scrollWidth)) {
+//     // your element have overflow
+//     element.scrollTop = element.scrollHeight;
+//     if (config.cooldown[1] === 0) {
+//       setTimeout(function () {
+//         // $('.gc').remove();
+//       }, 10000);
+//       config.cooldown[1] = 10;
+//     }
+
+//   }
+//   else {
+//     //your element don't have overflow
+//   }
+// }, 500);
 
 
 let loadSheet =
@@ -109,6 +128,7 @@ function updateUI() {
 let terminalCount = 0;
 
 setInterval(function () {
+  village.calculateVillagerCount();
 
   try {
     if (village.cap !== village.villagerCount) {
@@ -134,7 +154,7 @@ setInterval(function () {
   }
   catch (err) {
     console.log('Error caught: ' + err.messsage);
-    village.generateVillagers();
+    //village.generateVillagers();
   }
 }, 1000);
 
