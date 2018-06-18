@@ -1,18 +1,41 @@
 {
-  "0": {
-    "id": 0,
-    "type": "goblin"
-  },
-  "1": {
-    "id": 1,
-    "type": "goblin"
-  },
-  "2": {
-    "id": 2,
-    "type": "goblin"
-  },
-  "3": {
-    "id": 3,
-    "type": "goblin"
-  }
+  "enemies": [
+    {
+      "name": "Goblin Leader",
+      "type": "goblin-leader",
+      "leader": "true",
+      "skills": {
+        "damage": 12,
+        "defence": 13,
+        "dexterity": 12,
+        "wisdom": 15,
+        "level": 16,
+        "hp": 14.75
+      }
+    },
+    {
+      "name": "Goblin Warrior",
+      "type": "goblin",
+      "leader": false,
+      "skills": {
+        "damage": 13,
+        "defence": 12,
+        "dexterity": 13,
+        "level": 12,
+        "hp": 46
+      }
+    },
+    {
+      "name": "Goblin Warrior",
+      "type": "goblin",
+      "leader": false,
+      "skills": {
+        "damage": 10,
+        "defence": 11,
+        "dexterity": 8,
+        "level": 9,
+        "hp": 36
+      }
+    }
+  ]
 }

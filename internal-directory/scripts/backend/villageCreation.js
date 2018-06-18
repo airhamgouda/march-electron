@@ -70,10 +70,16 @@ const village = (function () {
 
       let firstName = chance.first();
       let lastName = chance.last();
+
       let skills = (characters.skillGenerator(lowMain, highMain));
       while (skills === undefined) {
         skills = characters.skillGenerator(lowMain, highMain);
       }
+      let battle = {
+        damage: 10 + (skills.strength + 2 + 4),
+        defence: 10 + (skills.constitution + 2 + 4),
+        dexterity: 10 + (skills.dexterity + 0 + 0)
+      };
       let id = i;
       // console.log(id);
       if (villagers.villagers[id]) {
@@ -85,10 +91,12 @@ const village = (function () {
         // console.log('new villager');
         villagers.villagers.push({
           met: false,
+          party: false,
           name: {
             first: firstName,
             last: lastName
           },
+          battle: battle,
           skills: skills,
           experience: {
             strengthXp: 0,
@@ -106,10 +114,15 @@ const village = (function () {
             wisdom: 0,
             charisma: 0
           },
+          attributes: {
+            damage: 4,
+            defence: 4,
+            speed: 0,
+          },
           inventory: [
             {
               name: 'Iron Sword',
-              equipped: false,
+              equipped: true,
               damage: 4,
               level: 3,
               buffType: 'strength',
@@ -120,7 +133,7 @@ const village = (function () {
             },
             {
               name: 'Leather Helmet',
-              equipped: false,
+              equipped: true,
               defence: 4,
               level: 4,
               buffType: 'constitution',

@@ -1,17 +1,17 @@
 {
   "name": {
-    "first": "Rosetta",
-    "last": "Clayton"
+    "first": "Alexander",
+    "last": "Messeri"
   },
   "skills": {
-    "strength": 4,
-    "constitution": 7,
-    "dexterity": 3,
-    "intelligence": 4,
-    "wisdom": 5,
+    "strength": 3,
+    "constitution": 3,
+    "dexterity": 7,
+    "intelligence": 3,
+    "wisdom": 7,
     "charisma": 4,
     "level": 8,
-    "hp": 30
+    "hp": 31
   },
   "buffs": {
     "strength": 2,
@@ -22,17 +22,22 @@
     "charisma": 0
   },
   "experience": {
-    "strengthXp": 15.440000000000012,
-    "constitutionXp": 21.229999999999944,
-    "dexterityXp": 13.510000000000035,
-    "intelligenceXp": 14.026666666666648,
-    "wisdomXp": 17.36999999999998,
-    "charismaXp": 15.440000000000012
+    "strengthXp": 12.48,
+    "constitutionXp": 12.48,
+    "dexterityXp": 20.800000000000054,
+    "intelligenceXp": 12.06000000000001,
+    "wisdomXp": 20.800000000000054,
+    "charismaXp": 14.559999999999947
+  },
+  "attributes": {
+    "damage": 4,
+    "defence": 4,
+    "speed": 0
   },
   "inventory": [
     {
       "name": "Iron Sword",
-      "equipped": false,
+      "equipped": true,
       "damage": 4,
       "level": 3,
       "buffType": "strength",
@@ -52,47 +57,7 @@
     },
     {
       "name": "Leather Helmet",
-      "equipped": false,
-      "defence": 4,
-      "level": 4,
-      "buffType": "constitution",
-      "buffAmt": 2,
-      "class": "helmet",
-      "description": "You see flakes coming off the side.. This helmet has seen better days",
-      "tags": [
-        "helmet",
-        "leather helmet",
-        "Leather helmet",
-        "leather Helmet",
-        "Leather Helmet",
-        "leatherhelmet",
-        "leatherHelmet",
-        "LeatherHelmet"
-      ]
-    },
-    {
-      "name": "Iron Sword",
-      "equipped": false,
-      "damage": 4,
-      "level": 3,
-      "buffType": "strength",
-      "buffAmt": 2,
-      "class": "weapon",
-      "description": "A rusted iron blade.. It gets the job done.",
-      "tags": [
-        "sword",
-        "iron sword",
-        "Iron sword",
-        "iron Sword",
-        "Iron Sword",
-        "ironsword",
-        "ironSword",
-        "Ironsword"
-      ]
-    },
-    {
-      "name": "Leather Helmet",
-      "equipped": false,
+      "equipped": true,
       "defence": 4,
       "level": 4,
       "buffType": "constitution",
@@ -110,5 +75,9 @@
         "LeatherHelmet"
       ]
     }
-  ]
+  ],
+  "death": {
+    "name": "Nancy",
+    "companion": false
+  }
 }

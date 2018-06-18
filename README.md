@@ -7,7 +7,7 @@ npm start
 
 Todo -
 Create dynamic equip command with dynamic selection -- DONE
-Convert village creation system to array based instead of object based
+Convert village creation system to array based instead of object based -- DONE
 Create random weapon distrabution with level requirement
 Create battle system
 Create enemy base generation

@@ -114,13 +114,14 @@ const canvas = (function () {
     } else { frameCount++; }
 
     // Is avatar.mainPlayer processing movement?
-    if (!avatar.mainPlayer.processMovement(currentFrameTime)) {
-      if (keysDown[38] && avatar.mainPlayer.canMoveUp()) { avatar.mainPlayer.moveUp(currentFrameTime); }
-      else if (keysDown[40] && avatar.mainPlayer.canMoveDown()) { avatar.mainPlayer.moveDown(currentFrameTime); }
-      else if (keysDown[37] && avatar.mainPlayer.canMoveLeft()) { avatar.mainPlayer.moveLeft(currentFrameTime); }
-      else if (keysDown[39] && avatar.mainPlayer.canMoveRight()) { avatar.mainPlayer.moveRight(currentFrameTime); }
+    if (config.battle === false) {
+      if (!avatar.mainPlayer.processMovement(currentFrameTime)) {
+        if (keysDown[38] && avatar.mainPlayer.canMoveUp()) { avatar.mainPlayer.moveUp(currentFrameTime); }
+        else if (keysDown[40] && avatar.mainPlayer.canMoveDown()) { avatar.mainPlayer.moveDown(currentFrameTime); }
+        else if (keysDown[37] && avatar.mainPlayer.canMoveLeft()) { avatar.mainPlayer.moveLeft(currentFrameTime); }
+        else if (keysDown[39] && avatar.mainPlayer.canMoveRight()) { avatar.mainPlayer.moveRight(currentFrameTime); }
+      }
     }
-
 
 
     // For loop to draw game map
@@ -220,7 +221,8 @@ const canvas = (function () {
   return {
     toIndex,
     gameMap,
-    startCanvas
+    startCanvas,
+    keysDown
   };
 })();
 

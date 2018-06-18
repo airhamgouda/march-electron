@@ -6,6 +6,31 @@ body {
      visibility: hidden;
 }
 
+.left {
+    box-sizing: border-box;
+    float: left;
+    border: 1px solid rgb(0, 0, 0);
+    font-size: 12px;
+    height: 100%;
+}
+
+.battle-states {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0);
+    height: 60%;
+}
+
+
+.right {
+    box-sizing: border-box;
+    float: right;
+    border: 1px solid rgb(0, 0, 0);
+    font-size: 12px;
+    height: 100%;
+}
+
+
 
 .terminal-input {
     box-sizing: border-box;

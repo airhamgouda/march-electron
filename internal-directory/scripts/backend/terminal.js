@@ -120,6 +120,12 @@ const terminal = (function () {
           high.equipped = true;
 
           save.localSave.buffs[buffType] += buffAmt;
+          if (high.damage) {
+            save.localSave.attributes.damage += high.damage;
+          }
+          if (high.defence) {
+            save.localSave.attributes.defence += high.defence;
+          }
           term.append(`<p class="gc">You have equipped the ${high.name} [${high.level}]</p>`);
         }
 
@@ -149,6 +155,12 @@ const terminal = (function () {
           if (found === true && unequip === true) {
             item.equipped = false;
             save.localSave.buffs[item.buffType] -= item.buffAmt;
+            if (item.damage) {
+              save.localSave.attributes.damage -= item.damage;
+            }
+            if (item.defence) {
+              save.localSave.attributes.defence -= item.defence;
+            }
             console.log(item);
             term.append(`<p class="gc">You put away the ${item.name} [${item.level}], feeling lighter, but a bit more exposed.</p>`);
             return;

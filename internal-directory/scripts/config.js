@@ -19,6 +19,8 @@ const config = (function () {
     }, second);
   }
 
+  let battle = false;
+
   //Cooldown handler
   // 0 - npcDemo
   // 1 - terminal_clear
@@ -182,7 +184,8 @@ const config = (function () {
     directions,
     interactive,
     cooldown,
-    clearTerminal
+    clearTerminal,
+    battle
   };
 })();
 

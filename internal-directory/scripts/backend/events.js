@@ -85,37 +85,43 @@ const events = (function () {
           } else {
             $('.terminal').append(npcDemo.snippet.intro21);
             save.localVillageSave.villagers[1].met = true;
+            save.localVillageSave.villagers[1].party = true;
             setTimeout(function () {
               $('.terminal').append(npcDemo.snippet.giftIronSword);
               config.clearTerminal(10);
             }, 6001);
           }
-          save.localSave.inventory.push({
-            name: 'Iron Sword',
-            equipped: false,
-            damage: 4,
-            level: 3,
-            buffType: 'strength',
-            buffAmt: 2,
-            class: 'weapon',
-            description: 'A rusted iron blade.. It gets the job done.',
-            tags: ['sword', 'iron sword', 'Iron sword', 'iron Sword', 'Iron Sword', 'ironsword', 'ironSword', 'Ironsword']
-          });
+          if (save.localSave.inventory.length === 0) {
+            save.localSave.inventory.push({
+              name: 'Iron Sword',
+              equipped: false,
+              damage: 4,
+              level: 3,
+              buffType: 'strength',
+              buffAmt: 2,
+              class: 'weapon',
+              description: 'A rusted iron blade.. It gets the job done.',
+              tags: ['sword', 'iron sword', 'Iron sword', 'iron Sword', 'Iron Sword', 'ironsword', 'ironSword', 'Ironsword']
+            });
 
-          save.localSave.inventory.push({
-            name: 'Leather Helmet',
-            equipped: false,
-            defence: 4,
-            level: 4,
-            buffType: 'constitution',
-            buffAmt: 2,
-            class: 'helmet',
-            description: 'You see flakes coming off the side.. This helmet has seen better days',
-            tags: ['helmet', 'leather helmet', 'Leather helmet', 'leather Helmet', 'Leather Helmet', 'leatherhelmet', 'leatherHelmet', 'LeatherHelmet']
-          });
+            save.localSave.inventory.push({
+              name: 'Leather Helmet',
+              equipped: false,
+              defence: 4,
+              level: 4,
+              buffType: 'constitution',
+              buffAmt: 2,
+              class: 'helmet',
+              description: 'You see flakes coming off the side.. This helmet has seen better days',
+              tags: ['helmet', 'leather helmet', 'Leather helmet', 'leather Helmet', 'Leather Helmet', 'leatherhelmet', 'leatherHelmet', 'LeatherHelmet']
+            });
+          }
+
+
 
 
           save.localVillageSave.villagers[0].met = true;
+          save.localVillageSave.villagers[0].party = true;
 
         } else if (save.localVillageSave.villagers[0].met === true) {
           // ...
