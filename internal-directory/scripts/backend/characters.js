@@ -64,6 +64,7 @@ const characters = (function () {
         first: first,
         last: last
       },
+      ID: config.ID(),
       skills: skills,
       buffs: {
         strength: 0,

@@ -18,6 +18,7 @@ const enemy = (function () {
 
 
     return {
+      ID: config.ID(),
       damage: damage,
       defence: defence,
       dexterity: dexterity,
@@ -36,6 +37,7 @@ const enemy = (function () {
 
 
     return {
+      ID: config.ID(),
       damage: damage,
       defence: defence,
       dexterity: dexterity,
@@ -80,7 +82,7 @@ const enemy = (function () {
     } else {
       console.log('Pleace specify enemy on list');
     }
-    // 
+    //
 
     return enemy;
   }

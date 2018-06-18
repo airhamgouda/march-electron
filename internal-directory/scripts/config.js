@@ -7,10 +7,15 @@
 
 const config = (function () {
 
-  // Swithces 
+  // Swithces
   // 0 = Off
   // 1 = On
 
+
+  // Random ID
+  var ID = function () {
+  return '_' + Math.random().toString(36).substr(2, 9);
+};
   // Clear Terminal
   function clearTerminal(sec) {
     let second = sec * 1000;
@@ -185,7 +190,8 @@ const config = (function () {
     interactive,
     cooldown,
     clearTerminal,
-    battle
+    battle,
+    ID
   };
 })();
 

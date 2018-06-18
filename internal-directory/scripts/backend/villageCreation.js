@@ -92,6 +92,7 @@ const village = (function () {
         villagers.villagers.push({
           met: false,
           party: false,
+          ID: config.ID(),
           name: {
             first: firstName,
             last: lastName
