@@ -54,13 +54,13 @@ const death = (function () {
 
       if (first === save.localVillageSave.villagers[i].name.first && last === save.localVillageSave.villagers[i].name.last) {
         // Kill villager
-        delete save.localVillageSave.villagers[i];
+        save.localVillageSave.villagers.splice(i, 1);
         save.saveGame(save.localSave, save.localVillageSave, save.localEnemySave);
 
       }
 
       if (first === battle.allyTeam[i].name.first && last === battle.allyTeam[i].name.last) {
-        delete battle.allyTeam[i];
+        battle.allyTeam.splice(i, 1);
       }
     }
 
@@ -69,12 +69,12 @@ const death = (function () {
   function killEnemy(enemy) {
     for (let i = 0; i < save.localEnemySave.enemies.length; i++) {
       if (enemy === save.localEnemySave.enemies[i]) {
-        delete save.localEnemySave.enemies[i];
+        save.localEnemySave.enemies.splice(i, 1);
         save.saveGame(save.localSave, save.localVillageSave, save.localEnemySave);
       }
 
       if (enemy === battle.enemyTeam[i]) {
-        delete battle.enemyTeam[i];
+        battle.enemyTeam.splice(i, 1);
       }
     }
   }

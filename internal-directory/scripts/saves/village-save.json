@@ -4,31 +4,117 @@
       "met": false,
       "party": false,
       "name": {
-        "first": "Effie",
-        "last": "Bessi"
+        "first": "Loretta",
+        "last": "Tacconi"
+      },
+      "battle": {
+        "damage": 21,
+        "defence": 19,
+        "dexterity": 13
+      },
+      "skills": {
+        "strength": 5,
+        "constitution": 3,
+        "dexterity": 3,
+        "intelligence": 4,
+        "wisdom": 3,
+        "charisma": 3,
+        "level": 6,
+        "hp": 31
+      },
+      "experience": {
+        "strengthXp": 124.02000000000092,
+        "constitutionXp": 96.46000000000346,
+        "dexterityXp": 96.46000000000346,
+        "intelligenceXp": 110.24000000000603,
+        "wisdomXp": 96.46000000000346,
+        "charismaXp": 96.46000000000346
+      },
+      "buffs": {
+        "strength": 2,
+        "constitution": 2,
+        "dexterity": 0,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": 0
+      },
+      "attributes": {
+        "damage": 4,
+        "defence": 4,
+        "speed": 0
+      },
+      "inventory": [
+        {
+          "name": "Iron Sword",
+          "equipped": true,
+          "damage": 4,
+          "level": 3,
+          "buffType": "strength",
+          "buffAmt": 2,
+          "class": "weapon",
+          "description": "A rusted iron blade.. It gets the job done.",
+          "tags": [
+            "sword",
+            "iron sword",
+            "Iron sword",
+            "iron Sword",
+            "Iron Sword",
+            "ironsword",
+            "ironSword",
+            "Ironsword"
+          ]
+        },
+        {
+          "name": "Leather Helmet",
+          "equipped": true,
+          "defence": 4,
+          "level": 4,
+          "buffType": "constitution",
+          "buffAmt": 2,
+          "class": "helmet",
+          "description": "You see flakes coming off the side.. This helmet has seen better days",
+          "tags": [
+            "helmet",
+            "leather helmet",
+            "Leather helmet",
+            "leather Helmet",
+            "Leather Helmet",
+            "leatherhelmet",
+            "leatherHelmet",
+            "LeatherHelmet"
+          ]
+        }
+      ]
+    },
+    {
+      "met": false,
+      "party": false,
+      "name": {
+        "first": "Susan",
+        "last": "Nakano"
       },
       "battle": {
         "damage": 19,
-        "defence": 21,
+        "defence": 23,
         "dexterity": 14
       },
       "skills": {
         "strength": 3,
-        "constitution": 5,
+        "constitution": 7,
         "dexterity": 4,
-        "intelligence": 7,
-        "wisdom": 4,
-        "charisma": 6,
-        "level": 9,
-        "hp": 40
+        "intelligence": 4,
+        "wisdom": 5,
+        "charisma": 4,
+        "level": 8,
+        "hp": 67
       },
       "experience": {
-        "strengthXp": 4.099999999999994,
-        "constitutionXp": 4.919999999999997,
-        "dexterityXp": 4.510000000000001,
-        "intelligenceXp": 5.740000000000004,
-        "wisdomXp": 4.510000000000001,
-        "charismaXp": 5.329999999999998
+        "strengthXp": 96.39000000000345,
+        "constitutionXp": 151.46999999999625,
+        "dexterityXp": 110.16000000000602,
+        "intelligenceXp": 110.16000000000602,
+        "wisdomXp": 123.93000000000092,
+        "charismaXp": 110.16000000000602
       },
       "buffs": {
         "strength": 2,

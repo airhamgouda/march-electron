@@ -1,17 +1,17 @@
 {
   "name": {
-    "first": "Alexander",
-    "last": "Messeri"
+    "first": "Myra",
+    "last": "Wallis"
   },
   "skills": {
     "strength": 3,
-    "constitution": 3,
-    "dexterity": 7,
-    "intelligence": 3,
-    "wisdom": 7,
-    "charisma": 4,
+    "constitution": 6,
+    "dexterity": 3,
+    "intelligence": 4,
+    "wisdom": 3,
+    "charisma": 9,
     "level": 8,
-    "hp": 31
+    "hp": 53
   },
   "buffs": {
     "strength": 2,
@@ -22,12 +22,12 @@
     "charisma": 0
   },
   "experience": {
-    "strengthXp": 12.48,
-    "constitutionXp": 12.48,
-    "dexterityXp": 20.800000000000054,
-    "intelligenceXp": 12.06000000000001,
-    "wisdomXp": 20.800000000000054,
-    "charismaXp": 14.559999999999947
+    "strengthXp": 97.85999999999694,
+    "constitutionXp": 139.79999999999634,
+    "dexterityXp": 97.85999999999694,
+    "intelligenceXp": 93.45333333333316,
+    "wisdomXp": 97.85999999999694,
+    "charismaXp": 181.73999999999643
   },
   "attributes": {
     "damage": 4,
@@ -77,7 +77,7 @@
     }
   ],
   "death": {
-    "name": "Nancy",
+    "name": "Eddie",
     "companion": false
   }
 }

@@ -42,18 +42,18 @@ const battle = (function () {
     enemy.clearEnemies();
     $('.left').remove();
     $('.right').remove();
-    allyTeam = [];
-    enemyTeam = [];
+    this.allyTeam = [];
+    this.enemyTeam = [];
 
     // Halt movement
 
     config.battle = true;
     // Friendly spawn
 
-    allyTeam.push(player);
+    this.allyTeam.push(player);
     for (let i = 0; i < villagers.length; i++) {
       if (villagers[i].party === true) {
-        allyTeam.push(villagers[i]);
+        this.allyTeam.push(villagers[i]);
       }
     }
 
@@ -61,14 +61,14 @@ const battle = (function () {
     enemy.spawn(num, type);
     for (let e = 0; e < save.localEnemySave.enemies.length; e++) {
 
-      enemyTeam.push(save.localEnemySave.enemies[e]);
+      this.enemyTeam.push(save.localEnemySave.enemies[e]);
 
 
     }
 
 
 
-
+    console.log(this.enemyTeam);
     term.append(`
     <div class="battle-stats">
     <table class="left ally-team" style="width:50%;height:150px;">
@@ -85,25 +85,25 @@ const battle = (function () {
             <th>Enemy</th>
           </tr>
           <tr>
-            <td>[${enemyTeam[0].skills.hp}]${enemyTeam[0].name}</td>
+            <td>[${this.enemyTeam[0].skills.hp}]${this.enemyTeam[0].name}</td>
           </tr>
         </table>
         </div>
         `);
     //battleSequence();
     // List allies
-    for (let a = 1; a < allyTeam.length; a++) {
+    for (let a = 1; a < this.allyTeam.length; a++) {
       $('.ally-team').append(`
           <tr>
-            <td>[${allyTeam[a].skills.hp}]${allyTeam[a].name.first} ${allyTeam[a].name.last}</td>
+            <td>[${this.allyTeam[a].skills.hp}]${this.allyTeam[a].name.first} ${this.allyTeam[a].name.last}</td>
           </tr>`
       );
     }
     // List enemies
-    for (let p = 1; p < enemyTeam.length; p++) {
+    for (let p = 1; p < this.enemyTeam.length; p++) {
       $('.enemy-team').append(`
           <tr>
-            <td>[${enemyTeam[p].skills.hp}]${enemyTeam[p].name}</td>
+            <td>[${this.enemyTeam[p].skills.hp}]${this.enemyTeam[p].name}</td>
           </tr>`
       );
     }
@@ -121,14 +121,14 @@ const battle = (function () {
       return;
     }
     // Set who attacks and their target 
-    let allyAttacker = allyTeam[attacker];
-    let enemyDefender = enemyTeam[defender];
+    let allyAttacker = this.allyTeam[attacker];
+    let enemyDefender = this.enemyTeam[defender];
 
 
 
     // Determine which enemy is attacking this turn
-    let enemyAttacker = enemyTeam[rollDice(enemyTeam.length)];
-    let allyDefender = allyTeam[rollDice(allyTeam.length)];
+    let enemyAttacker = this.enemyTeam[rollDice(this.enemyTeam.length)];
+    let allyDefender = this.allyTeam[rollDice(this.allyTeam.length)];
     // Calculate who strikes first
     let firstStrike;
     let enemyStrikeRoll = enemyAttacker.skills.dexterity * rollDice(20);
@@ -209,14 +209,16 @@ const battle = (function () {
 
     // End Sequence to reset all
 
-    if (allyTeam.length === 0) {
+    if (this.allyTeam.length === 0) {
       // enemies Win
-      term.append('Allies win');
-    }
 
-    if (enemyTeam.length === 0) {
-      // allies Win
       term.append('Enemies win');
+
+      if (this.enemyTeam.length === 0) {
+        // allies Win
+        term.append('Allies win');
+      }
+
     }
 
     save.saveGame(save.localSave, save.localVillageSave, save.localEnemySave);
@@ -237,9 +239,7 @@ const battle = (function () {
           <tr>
             <th>Ally</th>
           </tr>
-          <tr>
-            <td>[${player.skills.hp}]${player.name.first} ${player.name.last}</td>
-          </tr>
+          
         </table>
         
         <table class="right enemy-team" style="width:50%;height:150px;">
@@ -252,18 +252,18 @@ const battle = (function () {
        `);
     //battleSequence();
     // List allies
-    for (let a = 1; a < allyTeam.length; a++) {
+    for (let a = 0; a < this.allyTeam.length; a++) {
       $('.ally-team').append(`
           <tr>
-            <td>[${allyTeam[a].skills.hp}]${allyTeam[a].name.first} ${allyTeam[a].name.last}</td>
+            <td>[${this.allyTeam[a].skills.hp}]${this.allyTeam[a].name.first} ${this.allyTeam[a].name.last}</td>
           </tr>`
       );
     }
     // List enemies
-    for (let p = 0; p < enemyTeam.length; p++) {
+    for (let p = 0; p < this.enemyTeam.length; p++) {
       $('.enemy-team').append(`
           <tr>
-            <td>[${enemyTeam[p].skills.hp}]${enemyTeam[p].name}</td>
+            <td>[${this.enemyTeam[p].skills.hp}]${this.enemyTeam[p].name}</td>
           </tr>`
       );
     }
